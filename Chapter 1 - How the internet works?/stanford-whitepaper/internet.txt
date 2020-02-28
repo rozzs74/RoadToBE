@@ -1,0 +1,28 @@
+Author: John Royce C. Punay
+Date: Feb 28, 2020 9:05 PM
+Internet
+    - Global network of computers
+    - Each computers from a global network must have unique IP (Internet Protocol) address.
+    - There is a way to see if a computer device has an internet run 
+        ping <host.name or web address>
+    - How to communicate computers through the Internet? Well with the use of TCP/IP layer or protocal stack you can
+        send a message to another computer. Usually this protocal stack is built in into the computer's OS.
+        1.) Application Layer - Protocols specific to applications such as WWW, e-mail, FTP, etc.
+        2.) TCP layer - TCP directs packets to a specific application on a computer using a port number.
+        3.) IP Layer - IP directs packets to a specific computer using an IP address.
+        4. Hardware layer - Converts binary packet data to network signals and back. Like network interfaces (E.g. ethernet network card, modem for phone lines, etc.)
+     - There is another way to determine the route how the packet reach the destination. Through the use of traceroute. 
+        In summary If you use traceroute, you'll notice that your packets must travel through many things to get to their destination.
+        traceroute <web address / ip address>
+     -  The internet backbone is made up of large networks which interconnect with each other.Known as NSP network service provider.
+        Some of the large NSPs are UUNet, CerfNet, IBM, BBN Planet, SprintNet, PSINet, as well as others.
+        These networks peer with each other to exchange packet traffic. 
+        Each NSP is required to connect to three Network Access Points or NAPs. 
+        At the NAPs, packet traffic may jump from one NSP's backbone to another NSP's backbone. 
+        NSPs also interconnect at Metropolitan Area Exchanges or MAEs. MAEs serve the same purpose as the NAPs but are privately owned.
+     - When a packet arrives at a router, the router examines the IP address put there by the IP protocol layer on the originating computer.
+       The router checks it's routing table. If the network containing the IP address is found, the packet is sent to that network. 
+       If the network containing the IP address is not found, then the router sends the packet on a default route, usually up the backbone hierarchy to the next router.
+       will know where to send the packet.  If it does not, again the packet is routed upwards until it reaches a NSP backbone. 
+       The routers connected to the NSP backbones hold the largest routing tables and here the packet will be routed to the correct backbone, 
+       where it will begin its journey 'downward' through smaller and smaller networks until it finds it's destination. 
