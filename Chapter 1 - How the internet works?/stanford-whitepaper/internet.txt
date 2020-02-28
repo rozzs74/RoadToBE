@@ -26,3 +26,7 @@ Internet
        will know where to send the packet.  If it does not, again the packet is routed upwards until it reaches a NSP backbone. 
        The routers connected to the NSP backbones hold the largest routing tables and here the packet will be routed to the correct backbone, 
        where it will begin its journey 'downward' through smaller and smaller networks until it finds it's destination. 
+    - Domain names and address resolution
+        If you don't know the IP address of the computer there is called DNS referred to Domain name service that translate IP address into 
+         domain name such www.xyz.com. DNS is a distrubted database that tracks Computer IP adress and its name. There is a software
+          that access the database to obtain the domain name. If the domain name is not found it will be redirect to other DNS.
