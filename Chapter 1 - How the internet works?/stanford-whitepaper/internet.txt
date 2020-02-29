@@ -53,12 +53,12 @@ Internet
         Resource: https://tools.ietf.org/html/rfc821, https://en.wikipedia.org/wiki/Jon_Postel
     - Transmission Control Protocol
         One of the task of TCP is to route the application protocol to the correct application on the destination of computer.
-        To accomplish this task a port number must be used.
+        To accomplish this task a port number must be used. TCP job's is to make sure the packets arrive and in correct orders.
         1.) When TCP layer receives the data from application layer, it will be segmented into manageable chunks with TCP header, port number of application and TCP information.
             So that TCP knows where to sent to.
         2.) When TCP layer receives packets from IP layer below, the TCP layer strips tbe TCP header data from packet, data reconstruction if needed
             then sends back the data to application using port number taken from TCP header.
-        TCP contents
+        TCP header (Total of 20 bytes)
             a.) 16-bit Port number source and destination
             b.) 32-bit Sequence number 
             c.) 32-bit acknowledgement number 
@@ -72,4 +72,24 @@ Internet
         c.) SMTP - 25
         d.) HTTP - 80
         e.) Quake III Arena - 27960
-
+    - Internet Protocol
+        This layer is unreliable and connectionless. In addition it doesn't care if packets gets to it's destination or not. 
+        Nor does IP know about connections and port numbers. The task of IP is to send and route the packets to other computers.
+        In the stack IP layer is independent entities and may arrive in order. The only similar to TCP is the TCP header. 
+        IP header (Total of 20 bytes)
+            a.) version, header length, type of service
+            b.) 16-bit total length (in bytes)
+            c.) 16-bit identification
+            d.) flags
+            e.) 13-bit fragment offset
+            f.) 8-bit ttl
+            g.) 8-bit protocol
+            h.) 16-bit header checksum
+            i.) 32-bit source IP address
+            j.) 32-bit destination IP address 
+            k.) options
+            l.) data
+    - Packet
+        A packet consist of 20 bytes IP header, 20 bytes TCP header, data from application layer (Port number, etc)
+Resources
+https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm
