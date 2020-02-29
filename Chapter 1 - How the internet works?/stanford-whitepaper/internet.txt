@@ -37,7 +37,7 @@ Internet
     - Internet Protocols Revisited (Needed to function Internet?)
         Many protocols need to operate so that Internet will work properly such as TCP/IP protocols, Routing protocols, 
         medium access control protocol, application level protocols.
-    - Application protocols
+    - Application protocols HTTP
         A service called WWW or world wide web is the most commonly used. Then an application protocol to make the web work is HTTP or
         Hypertext Transfer Protocol. It's used by web browser and web servers to communicate with each other over the Internet. 
         Being said it sits on the top of TCP/IP in the protocol stack. Another thing to considered is that HTTP is a connection less software 
@@ -46,3 +46,8 @@ Internet
         Useful tools to utilise HTTP request over the terminal
         1.) telnet is default on Windows machine (Utilise TCP protocol)
         2.) nc or netcat for unix based OS (Utilsie UDP protocol)
+    - Application protocols SMTP
+        Another interner service  that uses electronic email is SMTP or Simple Mail Transfer Protocol. Its connection oriented and 
+        more complicated than HTTP.
+        The mail server will always respond 250 OK whenever client sent the message.
+        Resource: https://tools.ietf.org/html/rfc821, https://en.wikipedia.org/wiki/Jon_Postel
