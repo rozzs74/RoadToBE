@@ -12,11 +12,11 @@ def get_socket_stream():
     return socket.SOCK_STREAM
 
 def connect():
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((TCP_IP, TCP_PORT))
-    s.send(MESSAGE)
-    data = s.recv(BUFFER_SIZE)
-    s.close()
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.connect((TCP_IP, TCP_PORT))
+    server.send(MESSAGE)
+    data = server.recv(BUFFER_SIZE)
+    server.close()
     print(f"From client received ${data}")
 
 if __name__ == "__main__":

@@ -26,7 +26,7 @@ def run(connection):
         if not data:
             break
         print(f"Received data ${data}")
-        conconnectionn.send(data)
+        connection.send(data)
     connection.close()
 
 def main():
@@ -38,5 +38,5 @@ if __name__ == "__main__":
     IS_RUNNING = True
     TCP_IP = "127.0.0.1"
     TCP_PORT = 5005
-    BUFFER_SIZE = 1024
+    BUFFER_SIZE = 500
     main()

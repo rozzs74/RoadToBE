@@ -1,0 +1,4 @@
+https://www.thedailyprogrammer.com/2016/09/network-programming-io-multiplexing.html
+https://realpython.com/python-sockets/#handling-multiple-connections
+https://wiki.python.org/moin/TcpCommunication#TCP_Communication
+https://docs.python.org/3/library/socket.html?highlight=socket#module-socket
