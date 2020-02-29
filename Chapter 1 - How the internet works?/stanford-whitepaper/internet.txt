@@ -6,7 +6,7 @@ Internet
     - There is a way to see if a computer device has an internet run 
         ping <host.name or web address>
     - How to communicate computers through the Internet? Well with the use of TCP/IP layer or protocal stack you can
-        send a message to another computer. Usually this protocal stack is built in into the computer's OS.
+        send a message to another computer. Usually this protocal stack is built in into the computer's OS. Typically its FIFO
         1.) Application Layer - Protocols specific to applications such as WWW, e-mail, FTP, etc.
         2.) TCP layer - TCP directs packets to a specific application on a computer using a port number.
         3.) IP Layer - IP directs packets to a specific computer using an IP address.
@@ -51,3 +51,25 @@ Internet
         more complicated than HTTP.
         The mail server will always respond 250 OK whenever client sent the message.
         Resource: https://tools.ietf.org/html/rfc821, https://en.wikipedia.org/wiki/Jon_Postel
+    - Transmission Control Protocol
+        One of the task of TCP is to route the application protocol to the correct application on the destination of computer.
+        To accomplish this task a port number must be used.
+        1.) When TCP layer receives the data from application layer, it will be segmented into manageable chunks with TCP header, port number of application and TCP information.
+            So that TCP knows where to sent to.
+        2.) When TCP layer receives packets from IP layer below, the TCP layer strips tbe TCP header data from packet, data reconstruction if needed
+            then sends back the data to application using port number taken from TCP header.
+        TCP contents
+            a.) 16-bit Port number source and destination
+            b.) 32-bit Sequence number 
+            c.) 32-bit acknowledgement number 
+            d.) 16-bit TCP check sum 
+            e.) 16-bit urgent pointer
+            f.) options
+            g.) data
+    - Well know port numbers
+        a.) FTP - 20/21
+        b.) Telnet - 23
+        c.) SMTP - 25
+        d.) HTTP - 80
+        e.) Quake III Arena - 27960
+
