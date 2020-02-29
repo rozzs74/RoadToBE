@@ -1,4 +1,7 @@
-HTTP codes
+Author: John Royce C. Punay
+Date: Feb 29, 2020 4:05 PM
+
+HTTP codes in summary 
 1xx (Informational): Request received, continuing process.
 2xx (Successful): The action was successfully received, understood, and accepted.
 3xx (Redirection): Further action needs to be taken in order to complete the request.

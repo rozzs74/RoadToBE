@@ -1,0 +1,23 @@
+Author: John Royce C. Punay
+Date: Feb 29, 2020 4:11 PM
+
+Web browser
+    - Is a software application client that is used to locate, retrieve, display web content from
+        web server.
+    - It will not display the content withoug internet access.
+    - It can interpret static HTML web pages applications, JS, AJAX from hosted web servers. 
+    - Many browser plugins available in market to utilise and extend the capabalities of the application.
+    - Web browser is a group of structure codes that performs together to display web pages.
+    - Web browser archictecture
+        a.) UI - is the space where User interacts with the browser. It includes the address bar, back and next buttons, home button, refresh and stop, bookmark option, etc. 
+            Every other part, except the window where requested web page is displayed, comes under it.
+        b.) Browser engine - Its a bridge for UI and rendering engine. This is done by manipulating Inputs then goes to rendering engine.
+        c.) Rendering engine - responsible for rendering web pages on web browser screen. It interprets HTML, XML etc.
+        d.) Networking - Another component of web browser that receives URL from HTTP or FTP. It handles the communication and security on the Internet.
+        e.) JS interpreter - Another component that interpret and executes JS code embedded in the website. If script is external if fetchted first through
+            network then parse until it will be execute.
+        f.) UI backend - UI backend is used for drawing basic widgets like combo boxes and windows. This backend exposes a generic interface that is not platform specific. 
+            It underneath uses operating system user interface methods.
+        g.) Data persistence / storage - A typical browser supports storage mechanism such as localStorage, IndexedDB, WebSQL and FS.
+                It is a small database created on the local drive of the computer where the browser is installed. 
+                It manages user data such as cache, cookies, bookmarks and preferences.
