@@ -1,0 +1,12 @@
+HTTP codes
+1xx (Informational): Request received, continuing process.
+2xx (Successful): The action was successfully received, understood, and accepted.
+3xx (Redirection): Further action needs to be taken in order to complete the request.
+4xx (Client Error): The request contains bad syntax or cannot be fulfilled.
+5xx (Server Error): The server failed to fulfil an apparently valid request.
+
+
+Resources:
+https://httpstatuses.com/
+https://dev.opera.com/articles/http-response-codes/
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
