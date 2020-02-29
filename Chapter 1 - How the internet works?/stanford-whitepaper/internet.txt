@@ -34,3 +34,6 @@ Internet
           1.) Primary DNS or master server - resolves the web address request by the web browser. This is first point contact for a web browser.
           2.) Secondary DNS or slave server -  it backups what in primary server to provide inherent redundancy and high availability.
              Resources: https://tools.ietf.org/html/rfc2182, https://www.ietf.org/rfc/rfc1996.txt
+    - Internet Protocols Revisited (Needed to function Internet?)
+        Many protocols need to operate so that Internet will work properly such as TCP/IP protocols, Routing protocols, 
+        medium access control protocol, application level protocols.
