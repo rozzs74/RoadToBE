@@ -18,6 +18,9 @@ Web browser
             network then parse until it will be execute.
         f.) UI backend - UI backend is used for drawing basic widgets like combo boxes and windows. This backend exposes a generic interface that is not platform specific. 
             It underneath uses operating system user interface methods.
-        g.) Data persistence / storage - A typical browser supports storage mechanism such as localStorage, IndexedDB, WebSQL and FS.
+        g.) Data persistence / storage - A typical browser supports storage mechanism such as localStorage, IndexedDB, WebSQL and FS and web workers.
                 It is a small database created on the local drive of the computer where the browser is installed. 
                 It manages user data such as cache, cookies, bookmarks and preferences.
+
+Resource: https://medium.com/@monica1109/how-does-web-browsers-work-c95ad628a509, https://www.w3.org/TR/webdatabase/#sql
+https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API, https://github.com/google/lovefield, https://hackernoon.com/how-do-web-browsers-work-40cefd2cb1e1
