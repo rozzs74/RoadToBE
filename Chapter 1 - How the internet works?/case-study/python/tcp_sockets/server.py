@@ -1,6 +1,7 @@
 #SERVER
 # Run netstat -an to check the current socket server running refer to TCP_HOST and TCP_PORT
 # Or lsof -i -n
+# netstat -an | grep <port_number>
 
 import socket
 

@@ -7,6 +7,8 @@ import socket
 import types
 import sys
 
+sel = selectors.DefaultSelector()
+
 def close_sys():
     sys.exit(1)
 
@@ -14,21 +16,14 @@ def get_args():
     return sys.argv
 
 def close_selectors():
-    default_selector = get_default_selectors()
-    default_selector.close()
-
-def get_default_selectors():
-    default_selector = selectors.DefaultSelector()
-    return default_selector
+    sel.close()
 
 def unregister_selector(current_server):
-    default_selector = get_default_selectors()
-    default_selector.unregister(current_server)
+    sel.unregister(current_server)
     return True
 
 def register_selector(current_server, event, data=None):
-    default_selector = get_default_selectors()
-    default_selector.register(current_server, event, data)
+    sel.register(current_server, event, data)
     return True
 
 def get_address_family_ipv4():
@@ -71,7 +66,7 @@ def init_blocking_socket(current_server,state=True):
 
 def accept_connection(current_server):
     connection, address = accept_socket(current_server)
-    print(f"Accepted connection ${address}")
+    print(f"Connection received from client: ${address}")
     make_connection_non_block = init_blocking_socket(connection, False)
     if make_connection_non_block == True:
         data = types.SimpleNamespace(address=address, inb=b'', outb=b'')
@@ -86,21 +81,20 @@ def service_connection(key, mask):
         if recv_data: 
             data.outb += recv_data
         else:
-            print(f"Closing connection ${data.address}")
+            print(f"Closing connection {data.address}")
             unregister_selector(current_server)
             close_socket(current_server)
 
     if mask & selectors.EVENT_WRITE:
         if data.outb:
-            print(f"Echoing ${data.outb} to ${data.address}")
+            print(f"Sending {data.outb} to {data.address}")
             is_sent = send_socket(current_server, data.outb)
             data.outb = data.outb[is_sent:]
 
 def run_event_loop():
     try:
-        while IS_RUNNING:
-            default_selectors = get_default_selectors()
-            running_events = default_selectors.select(timeout=None)
+        while True:
+            running_events = sel.select(timeout=None)
             for key, mask in running_events:
                 if key.data is None:
                     accept_connection(key.fileobj)
@@ -115,7 +109,7 @@ def main():
     args = get_args()
     if len(args) != 3:
         print(f"Usage: <host_ip_address> <port#>")
-        sys.exit(1)
+        close_sys()
     else:
         server = create_socket()
         if server["state"] == True:
@@ -123,12 +117,12 @@ def main():
             if is_socket_binded == True:
                 is_server_running = listen_socket(server["instance"])
                 if is_server_running == True:
-                    print(f"Listening on {args[1]} {args[2]}")
+                    print(f"Listening on host:{args[1]} port:{args[2]}")
                     is_server_not_blocking_state = init_blocking_socket(server["instance"], False)
                     if is_server_not_blocking_state == True:
-                        register_selector(server["instance"], selectors.EVENT_READ)
-                        run_event_loop()
+                        is_done = register_selector(server["instance"], selectors.EVENT_READ)
+                        if is_done:
+                            run_event_loop()
 
 if __name__ == "__main__":
-    IS_RUNNING = True
     main()
