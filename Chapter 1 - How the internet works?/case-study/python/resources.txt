@@ -6,3 +6,9 @@ https://wiki.python.org/moin/TcpCommunication#TCP_Communication
 https://docs.python.org/3/library/socket.html?highlight=socket#module-socket
 https://docs.python.org/3/howto/sockets.html#socket-howto
 
+
+TCP vs UDP
+https://www.privateinternetaccess.com/blog/2018/12/tcp-vs-udp-understanding-the-difference/
+
+Event loop 
+https://encyclopedia2.thefreedictionary.com/event+loop
