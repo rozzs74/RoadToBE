@@ -3,6 +3,7 @@ SOCKETS
 https://www.thedailyprogrammer.com/2016/09/network-programming-io-multiplexing.html
 https://realpython.com/python-sockets/#handling-multiple-connections
 https://wiki.python.org/moin/TcpCommunication#TCP_Communication
+https://wiki.python.org/moin/UdpCommunication
 https://docs.python.org/3/library/socket.html?highlight=socket#module-socket
 https://docs.python.org/3/howto/sockets.html#socket-howto
 
@@ -12,3 +13,7 @@ https://www.privateinternetaccess.com/blog/2018/12/tcp-vs-udp-understanding-the-
 
 Event loop 
 https://encyclopedia2.thefreedictionary.com/event+loop
+
+SSL
+https://dev.to/zenulabidin/lab-how-does-ssl-work-5203   
+https://dev.to/terceranexus6/about-ssltls-security-48fj
