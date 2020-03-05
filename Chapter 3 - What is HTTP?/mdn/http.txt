@@ -21,7 +21,20 @@ HTTP
     - Designed 1990, being sent under TCP/IP layer or over TLS an encrypted TCP connection.
     - A client-server protocol, because the request is sent by single entity. It can be user-agent (or a proxy behalf of it.)  Or a web browser.
         Or can be a robot that crawls the Web to populate (Cypress, Selenium).
-
+Components of HTTP-based systems
+    - Client - REQUEST
+    - Server - RESPONSE
+    - An HTTP request by web browser is transmitted through computers, routers, modems and more. This 
+        is running behind the scene which is hidden under network and transport layers.
+    - Client: The user-agent    
+        A user-agent is any tool that performs request through the Internet example are the ff:
+            1.) Web browser which used by the user
+            2.) Script or programs used by engineers and web developers
+            3.) Your mobile phone.
+        To display web page the web browser sends a request for the web content which is representing the page. Once recieved
+        It will parsed the file, to get the mark up, layout formation (CSS) scripts that calls another request that browser 
+        executes then it will update the web page dynamically.
+        Any event can be done on the web page it will hit network request.
 Resources:
 https://developer.mozilla.org/en-US/docs/Web/HTTP
 https://en.wikipedia.org/wiki/Client%E2%80%93server_model
