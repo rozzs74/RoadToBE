@@ -35,6 +35,24 @@ Components of HTTP-based systems
         It will parsed the file, to get the mark up, layout formation (CSS) scripts that calls another request that browser 
         executes then it will update the web page dynamically.
         Any event can be done on the web page it will hit network request.
+Web server
+    - On the opposite side the second channel is web server.
+    - Which is the one that serves the documents requested by the client (user-agent).
+    - Normally server is just a piece of single machine virtually,
+        it actually a collection of servers sharing the process using
+        load balancing through on demand web requests.
+    - HTTP/1.1 Host header can share same IP address.
+Proxies
+    - A proxy is an operation that acts as a gateway between client and server.
+    - Usually it passes through numerous computers by relaying the HTTP messages on a 
+        layered protocol web stack mostly transport (TCP, UDP), network layer(Packet forwarding using routers) and physical layer.
+    - A message can be or cannot be aletered based upon proxies executes.
+    - Different proxies functions:
+        1. Caching - public, private or browser 
+        2. Filtering - Like an antivirus parental controls
+        3. Load balancing - allow multiple servers for different request
+        4. Authentication - Controls access for different resources 
+        5. Logging - allowing the storage of historical information
 Resources:
 https://developer.mozilla.org/en-US/docs/Web/HTTP
 https://en.wikipedia.org/wiki/Client%E2%80%93server_model
