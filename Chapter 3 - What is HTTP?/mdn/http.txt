@@ -1,0 +1,27 @@
+Author: John Royce C. Punay
+Date: March 5, 2020 5:38 PM
+
+
+HTTP 
+    - Hypertext Transfer Protocol
+    - Port 80
+    - an Application layer protocol that transmits hypermedia(sound, video) documents 
+        such HTML.
+    - Designed for communication between web browser and web server. Can be used to other purposes.
+    - It follows client-server model.
+    - Stateless protocol because server connection doesn't keep keep state between requests.
+    - Request from web server is being initiate by the recipient which is the web browser.
+    - HTTP processed the ff:
+        1. Scrtips (JS, CSS)
+        2. Mark up (HTML)
+        3. Images (img)
+        4. Video
+    - Clients and servers communicate by exchanging messages. For the web browser it's called REQUEST message whilst server an
+        answer of RESPONSE.
+    - Designed 1990, being sent under TCP/IP layer or over TLS an encrypted TCP connection.
+    - A client-server protocol, because the request is sent by single entity. It can be user-agent (or a proxy behalf of it.)  Or a web browser.
+        Or can be a robot that crawls the Web to populate (Cypress, Selenium).
+
+Resources:
+https://developer.mozilla.org/en-US/docs/Web/HTTP
+https://en.wikipedia.org/wiki/Client%E2%80%93server_model
