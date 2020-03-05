@@ -53,6 +53,26 @@ Proxies
         3. Load balancing - allow multiple servers for different request
         4. Authentication - Controls access for different resources 
         5. Logging - allowing the storage of historical information
+Basic Aspects of HTTP
+    - HTTP is simple
+        HTTP messges are easy to ready as human being. To make it easier 
+        for developers to debug, testing. 
+    - HTTP is extensible
+         Makes the protocol itself easy to use and extend. New functionality can even be introduced by a simple agreement between a client and a server about a new header's semantics.
+    - HTTP is stateless 
+         Due to perfomance issue the server doens't retain request meaning when its lost
+         once transaction is done. The performance is about the minimising the bandwidth and connection 
+         established.
+    - HTTP and connections
+         HTTP is being processed under transport layer can be TCP instead because its connection oriented 
+         compared to UDP which isn't. So HTTP relies on TCP standard, (Port number, data, IP address, etc..)
+         Client and server creates TCP connection for processing request and replying response.
+         HTTP2 uses multiplexing technique for connection which more efficient.
+         HTTP3 known as QUIC uses UDP as the basis but it will be nearly equivalent to TCP in the future?. 
+
+
 Resources:
 https://developer.mozilla.org/en-US/docs/Web/HTTP
 https://en.wikipedia.org/wiki/Client%E2%80%93server_model
+https://en.wikipedia.org/wiki/HTTP/3
+https://en.wikipedia.org/wiki/QUIC
