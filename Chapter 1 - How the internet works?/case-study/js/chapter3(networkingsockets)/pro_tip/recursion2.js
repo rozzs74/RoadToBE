@@ -22,8 +22,6 @@
 
 
 let items = [{ name: 'apple' }, { fruit: 'mango', t3: { t5: { t6: { t7: 100 } } } }, 3, { t2: 'avocado' }, { o9: 'melon', o1: { a: 'a' } }]
-
-
 let c = [];
 const recursive = (obj) => {
     for (let k in obj) {
