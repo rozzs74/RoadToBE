@@ -69,7 +69,22 @@ Basic Aspects of HTTP
          Client and server creates TCP connection for processing request and replying response.
          HTTP2 uses multiplexing technique for connection which more efficient.
          HTTP3 known as QUIC uses UDP as the basis but it will be nearly equivalent to TCP in the future?. 
-
+What can be controlled by HTTP
+    1.) Caching - HTTP can cache documents.
+    2.) Relaxing the origin constraint - To be able to prevent snoop on private details, the web browsers 
+        has a capability to enforce strict seperation between web sites and web browsers. 
+        This means that only pages from `origin` can access all the information of a web page.
+        But from HTTP headers it can be utilise so that browser can grant request.
+    3.) Authentication - For us to protect a certain page this is the right time to use an authentication under HTTP header
+        example WWW-Authenticate
+    4.) Proxy and tunneling
+        - Once packets navigate through the network and WWW it will go to proxy to do some operation before
+            it reach to the desitination server of the Internet
+            1.) Forward proxy - or tunnel, or gateway
+            2.) Reverse proxy - (used to control and protect access to a server for load-balancing, authentication, decryption or caching).
+    5.) Sessions
+        - HTTP cookies allows client to link the state of server. Despite of being a stateless protocol sessions created.
+            Reasonable for user allowing change configuration of computes to see the output.
 
 Resources:
 https://developer.mozilla.org/en-US/docs/Web/HTTP
