@@ -1,5 +1,7 @@
 
 // let t = [];
+// Author: John Royce C. Punay
+// Date: March 11, 2020 5:38 PM
 
 
 // (function royce(n, arr) {
@@ -26,8 +28,10 @@ let c = [];
 const recursive = (obj) => {
     for (let k in obj) {
         if (obj[k] && typeof obj[k] === 'object') {
+            // parent
             recursive(obj[k])
         } else {
+            // child
             c.push(obj[k])
         }
     }
