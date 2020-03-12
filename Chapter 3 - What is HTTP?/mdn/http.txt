@@ -85,6 +85,26 @@ What can be controlled by HTTP
     5.) Sessions
         - HTTP cookies allows client to link the state of server. Despite of being a stateless protocol sessions created.
             Reasonable for user allowing change configuration of computes to see the output.
+HTTP Flow
+    1. Client performs request from server or proxy, it opened a TCP connection. As TCP is used to send request from server. 
+     Either client open new connection or reuse existing connection or can opene multiple TCP connection for servers.
+    2. Of course once connection appeard client may send an HTTP message. It was human readable and encapsulated frames.
+        GET / HTTP/1.1
+        HOST: <hostname>
+        Accept-Langauge: en-US
+    3. Client receives the request which is known as response
+        HTTP/1.1 200 OK
+        Date: Sat, 09 Oct 2010 14:28:02 GMT
+        Server: Apache
+        Last-Modified: Tue, 01 Dec 2009 20:18:22 GMT
+        ETag: "51142bc1-7449-479b075b2891b"
+        Accept-Ranges: bytes
+        Content-Length: 29769
+        Content-Type: text/html
+        <!DOCTYPE html... (here comes the 29769 bytes of the requested web page)
+    4. Close or reuse the connection for further request.
+HTTP pipeling - is a technique that clien can perform serveral request without waiting the first response to be received.
+    it was take place under HTTP2 which more robust multiplexing request.
 
 Resources:
 https://developer.mozilla.org/en-US/docs/Web/HTTP
