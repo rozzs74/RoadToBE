@@ -6,4 +6,26 @@ Objectives
  when to use this technique.
 
 
- 
+ How cache is related to the web?
+  - Modern web application improved perfomance by reusing the previous fetched resources rather than it process the request.
+    So by means latency is reduce and network traffic which lessen the time to display the response. 
+
+Caching
+  - It's an optimazation technique that allows to store copy of items on given resource when the operation is repeated.
+
+Web cache 
+  - When a web cache is configured, the request will be intercept instead return the copy of request to avoid reprocess or redownload the request 
+     from the originating server.
+
+Advantage on web cache
+ 1. Booting server and computational mechanism is not happened in the origin web server.
+ 2. Improved perfomance as being closer to reach the client on the request.
+ 3. Less time transport the request back.
+
+Disadvantage
+ 1. Consume time for proper configuration as resources aren't identical to each other.
+ 2. Only cache common things until it changes not longer relevant. Reprocess to other clients that uses it.
+
+ Two category of web cache
+ 1. Private cache - only for single user 
+ 2. Shared cache - only for multiple users
