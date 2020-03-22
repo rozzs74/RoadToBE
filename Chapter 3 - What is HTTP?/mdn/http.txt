@@ -110,13 +110,19 @@ HTTP messages
     - From HTTP/1.1 version its human-readable whilst in HTTP/2 the message is embedded on binary structure, such a frame. In this it allows to 
         optmize by compressing the headers in to multiplexing.
     - Two types of HTTP message
-        1. Requests
+        1. Requests - The output that client performed.
             Components of Request
                 a. Method (GET, POST, PUT, DELETE)
                 b. Path (/users) which refers where to get from the resources
                 c. HTTP version of protocol e.g (HTTP/1.1) or (HTTP/2)
-                d. Headers which is optional and convey additional information for the servers.
-                e. Body is the parameters from the request e.g  JSON
+                d. HTTP Headers which is optional and convey additional information for the servers.
+                e. HTTP Body is the parameters from the request e.g  JSON
+        2. Repsose - The output that server performs
+            Components of Response
+                a. HTTP version protocol e.g (HTTP/1.1) or (HTTP/2)
+                b. Status code (1xx, 2xx, 3xx 4xx, 5xx) associated with Status message which depends on status code.
+                c. HTTP headers
+                d. HTTP Body - contains the response.
 Resources:
 https://developer.mozilla.org/en-US/docs/Web/HTTP
 https://en.wikipedia.org/wiki/Client%E2%80%93server_model
