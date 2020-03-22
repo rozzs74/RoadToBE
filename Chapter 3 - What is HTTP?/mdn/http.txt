@@ -103,9 +103,20 @@ HTTP Flow
         Content-Type: text/html
         <!DOCTYPE html... (here comes the 29769 bytes of the requested web page)
     4. Close or reuse the connection for further request.
-HTTP pipeling - is a technique that clien can perform serveral request without waiting the first response to be received.
+HTTP pipeling - is a technique that client can perform serveral request without waiting the first response to be received.
     it was take place under HTTP2 which more robust multiplexing request.
 
+HTTP messages  
+    - From HTTP/1.1 version its human-readable whilst in HTTP/2 the message is embedded on binary structure, such a frame. In this it allows to 
+        optmize by compressing the headers in to multiplexing.
+    - Two types of HTTP message
+        1. Requests
+            Components of Request
+                a. Method (GET, POST, PUT, DELETE)
+                b. Path (/users) which refers where to get from the resources
+                c. HTTP version of protocol e.g (HTTP/1.1) or (HTTP/2)
+                d. Headers which is optional and convey additional information for the servers.
+                e. Body is the parameters from the request e.g  JSON
 Resources:
 https://developer.mozilla.org/en-US/docs/Web/HTTP
 https://en.wikipedia.org/wiki/Client%E2%80%93server_model
