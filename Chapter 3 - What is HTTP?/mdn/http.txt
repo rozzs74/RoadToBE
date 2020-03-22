@@ -12,7 +12,7 @@ HTTP
     - Stateless protocol because server connection doesn't keep keep state between requests.
     - Request from web server is being initiate by the recipient which is the web browser.
     - HTTP processed the ff:
-        1. Scrtips (JS, CSS)
+        1. Scripts (JS, CSS)
         2. Mark up (HTML)
         3. Images (img)
         4. Video
@@ -20,7 +20,7 @@ HTTP
         answer of RESPONSE.
     - Designed 1990, being sent under TCP/IP layer or over TLS an encrypted TCP connection.
     - A client-server protocol, because the request is sent by single entity. It can be user-agent (or a proxy behalf of it.)  Or a web browser.
-        Or can be a robot that crawls the Web to populate (Cypress, Selenium).
+        Or can be a robot that crawls the Web to populate e.g (Cypress, Selenium).
 Components of HTTP-based systems
     - Client - REQUEST
     - Server - RESPONSE
