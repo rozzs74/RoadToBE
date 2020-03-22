@@ -103,7 +103,7 @@ HTTP Flow
         Content-Type: text/html
         <!DOCTYPE html... (here comes the 29769 bytes of the requested web page)
     4. Close or reuse the connection for further request.
-HTTP pipeling - is a technique that client can perform serveral request without waiting the first response to be received.
+HTTP pipeling (Need to have case study) - is a technique that client can perform serveral request without waiting the first response to be received.
     it was take place under HTTP2 which more robust multiplexing request.
 
 HTTP messages  
@@ -123,8 +123,17 @@ HTTP messages
                 b. Status code (1xx, 2xx, 3xx 4xx, 5xx) associated with Status message which depends on status code.
                 c. HTTP headers
                 d. HTTP Body - contains the response.
+    APIs based on HTTP
+        1.) XMLHTTPRequest (Need to have case study) - Most common API used by the client 
+        2.) Server-sent events (Need to create case study) - one way flow that server uses to send events to the client using HTTP as transport mechanism.
+    Overview conclusion
+         Now we have grasp knowledge about HTTP so it's an extensible protocol that everyone can use.
+
 Resources:
 https://developer.mozilla.org/en-US/docs/Web/HTTP
 https://en.wikipedia.org/wiki/Client%E2%80%93server_model
 https://en.wikipedia.org/wiki/HTTP/3
 https://en.wikipedia.org/wiki/QUIC
+https://medium.com/code-zen/python-generator-and-html-server-sent-events-3cdf14140e56
+https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
