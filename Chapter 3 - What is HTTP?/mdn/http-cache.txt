@@ -46,7 +46,7 @@ Controlling caching
       ex: Cache-control: no-store
     b.) Cache but revalidate - The cache operation send a request to origin server for validation before 
         releasing a cached copy. 
-      ex: Cache-control: no-cache
+      ex: Cache-control: no-cache		
     c.) Private and public caches - Public for HTTP authentication, Private is for single user cache.
      ex: Cache-control: private
      ex: Cache-control: public
@@ -57,6 +57,22 @@ Controlling caching
 2.) Pragma header (HTTP/1.0) - This header behaves the same with Cache-Control: no-cache but with the least version.
 
 
+Freshness
+1.) Cache eviction - is the process on removing items in the cache periodically.
+2.) Before the resources cached its expiration time is `FRESH` whilst after the expiration time its `STALE
+3.) There is called eviction algorithm applied to fresh resources where if the cache storage is full it will
+	 expel an element in the cache randomly using LRU (Least Recently Used).
+4.) For stale resources it doesn't use cache eviction policy instead it will forward a header known as 
+    <If-None-Match> to verify it still fresh.If so server responed 304 (Not modified) to save bandwith.
 
+Pseudo-code:
+Cache-control: max-age=N then N is equal FRESHNESS life time. Then If Expires header exists minus Date header 
+ then that is the FRESHNESS.
+
+ expirationTime = responseTime + freshnessLifetime(max-age) - currentAge (Date received)
+ 
+where responseTime is the time at which the response was received according to the browser.
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
+https://www.ehcache.org/documentation/2.8/apis/cache-eviction-algorithms.html
+https://www.youtube.com/watch?v=S6IfqDXWa10
