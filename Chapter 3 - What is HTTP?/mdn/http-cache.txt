@@ -89,3 +89,6 @@ When a validation is made the server can ignore the request instead return 200 o
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
 https://www.ehcache.org/documentation/2.8/apis/cache-eviction-algorithms.html
 https://www.youtube.com/watch?v=S6IfqDXWa10
+https://tools.ietf.org/html/rfc7234
+https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching
+https://redbot.org/
