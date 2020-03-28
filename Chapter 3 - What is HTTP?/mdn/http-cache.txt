@@ -65,13 +65,26 @@ Freshness
 4.) For stale resources it doesn't use cache eviction policy instead it will forward a header known as 
     <If-None-Match> to verify it still fresh.If so server responed 304 (Not modified) to save bandwith.
 
-Pseudo-code:
+Formula:
 Cache-control: max-age=N then N is equal FRESHNESS life time. Then If Expires header exists minus Date header 
  then that is the FRESHNESS.
 
  expirationTime = responseTime + freshnessLifetime(max-age) - currentAge (Date received)
- 
+
 where responseTime is the time at which the response was received according to the browser.
+
+
+Cache Validation
+ 1.) When resources from the cached expired it will validate or refetched. 
+		typically happening when reload the web browser. If the cache response from the server include 
+		a header of Cache-control: must-revalidate.
+ 2.)  Etags is a strong validator because the client doesn't know the representation and can't predict what 
+       will be the value.
+ 3.)  Last-Modified is a weak validator its only 1 second of resolution.  If this header is available on the 
+		response the client can issued a new header called If-Modified-Since to validate the cache document.
+When a validation is made the server can ignore the request instead return 200 or 304 not modified with an empty
+ body just to reuse the current cached  document the expiration time can be found on the header of latter response.
+
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
 https://www.ehcache.org/documentation/2.8/apis/cache-eviction-algorithms.html
