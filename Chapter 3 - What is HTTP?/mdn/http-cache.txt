@@ -27,5 +27,36 @@ Disadvantage
  2. Only cache common things until it changes not longer relevant. Reprocess to other clients that uses it.
 
  Two category of web cache
- 1. Private cache - only for single user 
- 2. Shared cache - only for multiple users
+ 1. Private cache - only for single user. This can be found on the web browser settings.
+ 2. Shared cache - only for multiple users. This caching approach is more applied on the networking side 
+ by having local network infrastructure that relay message at the same time for all users.
+
+
+ Targets of caching operations
+
+  - HTTP caching is an optional parameters.
+  - But reusable resources are desirable to make it performant
+  - HTTP caching is limited to GET HTTP method.
+  - Common forms of caching entities are 200(OK), 301(Moved Permanently), 404(Not Found), 206(Partial Content)
+
+
+Controlling caching
+1.) Cache-Control (HTTP/1.1) - a header field used both request and response. The usage of this header is to defind
+    a.) No caching - Each request and response downloaded every time 
+      ex: Cache-control: no-store
+    b.) Cache but revalidate - The cache operation send a request to origin server for validation before 
+        releasing a cached copy. 
+      ex: Cache-control: no-cache
+    c.) Private and public caches - Public for HTTP authentication, Private is for single user cache.
+     ex: Cache-control: private
+     ex: Cache-control: public
+    d.) Expiration - When would the cache be expired. Applied thr	ough the assets like CSS,HTML,JS files.
+     ex: Cache-control: max-age=<seconds> 
+    e.) Validation -  Should validate first the existing cache before using it.
+	 ex: Cache-control: must-revalidate
+2.) Pragma header (HTTP/1.0) - This header behaves the same with Cache-Control: no-cache but with the least version.
+
+
+
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
