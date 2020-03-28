@@ -79,11 +79,18 @@ Cache Validation
 		typically happening when reload the web browser. If the cache response from the server include 
 		a header of Cache-control: must-revalidate.
  2.)  Etags is a strong validator because the client doesn't know the representation and can't predict what 
-       will be the value.
+       will be the value. This is a validation token used to communicate and 
+	   check if the resources are modified.
  3.)  Last-Modified is a weak validator its only 1 second of resolution.  If this header is available on the 
 		response the client can issued a new header called If-Modified-Since to validate the cache document.
 When a validation is made the server can ignore the request instead return 200 or 304 not modified with an empty
  body just to reuse the current cached  document the expiration time can be found on the header of latter response.
+
+As a web developer how do you solve the efficiency of token validation for cache? Although browser does all 
+the work. Like detects if a validation token has been previously specified, it appends the validation token to an outgoing request, 
+and it updates the cache timestamps as necessary based on the received response from the server.
+
+The only thing need todo is ensure that server get the latest ETag token which provide by the client.
 
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
