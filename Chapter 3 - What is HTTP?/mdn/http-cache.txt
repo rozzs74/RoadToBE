@@ -99,3 +99,4 @@ https://www.youtube.com/watch?v=S6IfqDXWa10
 https://tools.ietf.org/html/rfc7234
 https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching
 https://redbot.org/
+https://realpython.com/caching-external-api-requests/#github-api
