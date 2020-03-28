@@ -1,0 +1,7 @@
+Author: John Royce C. Punay
+Date: March 28, 2020 5:17 PM
+
+
+Objectives
+ To have a solid understanding and grasp knowledge about HTTP heaers. What is the usecase and 
+ when to use this technique.
