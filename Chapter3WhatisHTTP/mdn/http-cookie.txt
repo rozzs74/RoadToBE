@@ -1,0 +1,35 @@
+Author: John Royce C. Punay
+Date: April 9, 2020 3:11 PM
+
+
+Objectives
+To have a solid foundation about HTTP cookie. What is the use case and 
+when to use technique
+
+
+HTTP Cookie - small piece of data that server sendt to client. Then 
+user agent could store the value or can be send it back to the server.
+The advantage of using HTTP cookie is to make the application optimise and performant.
+Example under session management the server send cookie to client remembering it's credentials,
+since server understand that transaction is using a cookie, it doesn't perform computation.
+In summary it minimze the work load
+
+Use case:
+1.) Session management - Logins, shopping carts, game scores, or anything else the server should remember.
+2.) Personalization - User preferences, themes, and other settings
+3.) Tracking - Recording and analyzing user behavior
+
+
+Creating cookies (Set-Cookie, Cookie)
+    On receiving HTTP request, the server can send Set-Cookie header.
+        1.) Session cookies - when client shutdowns the cookie is deleted. Below example doesn't have expiration date. Closing browser is not exception
+            (HTTP Response) Set-Cookie: yummy_cookie=choco
+            (HTTP Response) Set-Cookie: tasty_cookie=strawberry
+            Every (HTTP Request)  Cookie: yummy_cookie=choco; tasty_cookie=strawberry
+        2.) Permanent cookies - Adding expiration make the cookie permanent with a specific date.
+             (HTTP Response) Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT;
+        3.) Secure and HTTP only cookies -  A secure cookie is only sent to the server with an encrypted request over the HTTPS protocol.
+            Note do not include sensitive information because it's not guaranteed to be safe and protected. Client can't be involved this feature to mitigat XSS.
+            (HTTP Response) Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
