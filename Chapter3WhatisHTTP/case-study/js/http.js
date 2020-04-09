@@ -1,3 +1,8 @@
+/*
+	Author: John Royce C. Punay
+	Date created: April 9, 2020 5:00PM
+*/
+
 'use strict'
 const http = require("http")
 
