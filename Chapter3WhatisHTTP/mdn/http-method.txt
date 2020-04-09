@@ -1,0 +1,63 @@
+Author: John Royce C. Punay
+Date: April 9, 2020 3:38 PM
+
+
+
+Objectives
+To have a solid foundation about HTTP methods. What is the use case and 
+when to use technique
+
+
+HTTP methods (HTTP verbs) - it defines set of request methods or desired action to be performed by the client or give resource.
+
+Desired actions ca be 
+1.) Safe - Doesn't update the server state. Meaning a read-only operation. Example is GET, HEAD, OPTIONS. In addition safe methods are idempotent(Any operation equal to itself or same output)
+	An unsafe methods are PUT, DELETE, POST (Idempotent).
+	GET /pageX.html HTTP/1.1
+	POST /pageX.html HTTP/1.1 (Unsafe) 
+	DELETE /idX/delete HTTP/1.1 (Unsafe)
+2.) Idempotent - Multiple request would only give equal or same output with no side effects. Example GET, HEAD, PUT, DELETE
+	GET /pageX HTTP/1.1   
+	GET /pageX HTTP/1.1   
+	GET /pageX HTTP/1.1   
+	GET /pageX HTTP/1.1   
+
+3.) Cacheable - HTTP response that can be cached like, stored to be retrieved for later usage. Status code that are cacheable
+	200, 203, 204, 206, 300, 301, 404, 405, 410, 414, and 501.
+	Note: Adding Cache-Control header would prevent the caching.
+	GET /pageX.html HTTP/1.1
+	(…) 
+
+	200 OK
+	(…)
+	GET /pageX.html HTTP/1.1
+	(…)
+	200 OK
+	Cache-Control: no-cache
+	(…)
+
+Types of request methods:
+1.) GET - Client request data.
+2.) HEAD - Identical to GET but without response body that client won't used.
+3.) POST - Client submitting entity causing a change state of server.
+4.) PUT - Client replace or update current server reprensentation
+5.) DELETE - Client delete specified resource
+6.) CONNECT - Client create tunnel connection with server by specified resource.
+7.) TRACE - Create loop back test along with path or target resource
+8.) PATCH - Client applied partial modification to specified resource.
+
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+https://developer.mozilla.org/en-US/docs/Glossary/safe
+https://developer.mozilla.org/en-US/docs/Glossary/idempotent
+https://developer.mozilla.org/en-US/docs/Glossary/cacheable
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/CONNECT
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/TRACE
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PATCH
+https://tools.ietf.org/html/rfc7231#section-4
