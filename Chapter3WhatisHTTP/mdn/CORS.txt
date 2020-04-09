@@ -1,0 +1,116 @@
+Author: John Royce C. Punay
+Date: April 9, 2020 4:20 PM
+
+Objectives
+ To have a solid understanding and grasp knowledge about CORS. What is the usecase and 
+ when to use this technique.
+
+
+CORS (Cross-Origin Resource Sharing) - is a mechanism (technique) that utilise HTTP headers to tell browser granting web application single running one origin accessed from different
+    origin.
+Use case:
+ it allows servers to specify not just who can access its assets, but also how the assets can be accessed. 
+ Cross-origin requests are made using the standard HTTP request methods.
+
+- A web appliaction initiates cross-origin HTTP request when the resources have different origin from its own.
+- For security reasons, browsers restrict cross-origin HTTP requests initiated from scripts.
+- Modern browsers already using a cross-origin requests for data transfer.
+
+Functional overview
+- Servers let you add HTTP headers to describe which origins are permitted to read information from the web browser.
+- XMLHTTPRequest dom API that allows cross-site requests under supporting browser.
+- CORS failures result in errors, but for security reasons, specifics about the error are not available to JavaScript.
+All the code knows is that an error occurred. 
+The only way to determine what specifically went wrong is to look at the browser's console for details.
+
+Access Control protocol:
+Simple Request - straight forward approach for cross-site resources
+    1.) (HTTP REQUEST) Origin: <domain> https://foo.example
+    2.) (HTTP RESPONSE) Access-Control-Allow-Origin: * - Meaning the current origin or domain can be access by any domain.
+    3.) (HTTP RESPONSE) Access-Control-Allow-Origin: https://foo.example - only that domain can access the resources.
+Preflighted Request - Is request that send partial method to determine if the actual request is safe to send.
+    1.) HTTP (REQUEST) 
+            OPTIONS /resources/post-here/ HTTP/1.1
+            Host: bar.other
+            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:71.0) Gecko/20100101 Firefox/71.0
+            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+            Accept-Language: en-us,en;q=0.5
+            Accept-Encoding: gzip,deflate
+            Connection: keep-alive
+            Origin: http://foo.example
+            Access-Control-Request-Method: POST
+            Access-Control-Request-Headers: X-PINGOTHER, Content-Type
+    2.) HTTP (RESPONSE)
+            HTTP/1.1 204 No Content
+            Date: Mon, 01 Dec 2008 01:15:39 GMT
+            Server: Apache/2
+            Access-Control-Allow-Origin: https://foo.example
+            Access-Control-Allow-Methods: POST, GET, OPTIONS
+            Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
+            Access-Control-Max-Age: 86400
+            Vary: Accept-Encoding, Origin
+            Keep-Alive: timeout=2, max=100
+            Connection: Keep-Alive
+    Once prefligh complete you may proceed with the actual request
+    1.) (HTTP REQUEST) 
+            POST /resources/post-here/ HTTP/1.1
+            Host: bar.other
+            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:71.0) Gecko/20100101 Firefox/71.0
+            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+            Accept-Language: en-us,en;q=0.5
+            Accept-Encoding: gzip,deflate
+            Connection: keep-alive
+            X-PINGOTHER: pingpong
+            Content-Type: text/xml; charset=UTF-8
+            Referer: https://foo.example/examples/preflightInvocation.html
+            Content-Length: 55
+            Origin: https://foo.example
+            Pragma: no-cache
+            Cache-Control: no-cache
+            <person><name>Arun</name></person>
+    2.) (HTTP RESPONSE)
+            HTTP/1.1 200 OK
+            Date: Mon, 01 Dec 2008 01:15:40 GMT
+            Server: Apache/2
+            Access-Control-Allow-Origin: https://foo.example
+            Vary: Accept-Encoding, Origin
+            Content-Encoding: gzip
+            Content-Length: 235
+            Keep-Alive: timeout=2, max=99
+            Connection: Keep-Alive
+            Content-Type: text/plain
+            [Some GZIP'd payload]
+    Note: Preflight request can be redirects, but the all browsers doesn't support redirect. If not supported browser will send console error of the browser, but 
+        if supported it will be redirect.
+
+Request with credentials - using a credential request by HTTP cookies or HTTP headers (Authentication) info.
+    (HTTP REQUEST)
+        GET /resources/access-control-with-credentials/ HTTP/1.1
+        Host: bar.other
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:71.0) Gecko/20100101 Firefox/71.0
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Accept-Language: en-us,en;q=0.5
+        Accept-Encoding: gzip,deflate
+        Connection: keep-alive
+        Referer: http://foo.example/examples/credential.html
+        Origin: http://foo.example
+        Cookie: pageAccess=2
+    (HTTP RESPONSE)
+        HTTP/1.1 200 OK
+        Date: Mon, 01 Dec 2008 01:34:52 GMT
+        Server: Apache/2
+        Access-Control-Allow-Origin: https://foo.example
+        Access-Control-Allow-Credentials: true
+        Cache-Control: no-cache
+        Pragma: no-cache
+        Set-Cookie: pageAccess=3; expires=Wed, 31-Dec-2008 01:34:53 GMT
+        Vary: Accept-Encoding, Origin
+        Content-Encoding: gzip
+        Content-Length: 106
+        Keep-Alive: timeout=2, max=100
+        Connection: Keep-Alive
+        Content-Type: text/plain
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+https://fetch.spec.whatwg.org/#http-cors-protocol
+https://www.codecademy.com/articles/what-is-cors
