@@ -5,3 +5,65 @@ Date: March 28, 2020 5:17 PM
 Objectives
  To have a solid understanding and grasp knowledge about HTTP heaers. What is the usecase and 
  when to use this technique.
+
+ How does HTTP headers related to web?
+  - Because it let the user agent or client to include additional information
+	over HTTP request or response.
+
+Context HTTP Headers 
+1.) General headers - is an HTTP header that is applied in both request and response messages.
+	- Date
+		Date: <day-name>, <day> <month> <year> <hour>:<minute>:<second> GMT
+	- HTTP Cache(Cache-Control)
+		Cache-Control: must-revalidate
+		Cache-Control: no-cache
+		Cache-Control: no-store
+		Cache-Control: no-transform
+		Cache-Control: public
+		Cache-Control: private
+		Cache-Control: proxy-revalidate
+		Cache-Control: max-age=<seconds>
+		Cache-Control: s-maxage=<seconds>
+	- Connection
+		Connection: keep-alive
+		Connection: close
+2.) Request headers - is an HTTP header that is can used at HTTP request. To give context of request.
+	- Accept
+	- Accept-*
+	- If-*
+	- Cookie
+	- User-Agent
+	- Referer
+	- Host
+	- Proxy-Authorization
+	- TE(Transfer encodings) informally, Accep-Transfer-Encoding
+		TE: compress
+		TE: deflate
+		TE: gzip
+		TE: trailers
+		TE: trailers, deflate;q=0.5
+	- Authorization 
+		<type> <credentials>
+		Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
+3.) Reponse headers - is an HTTP header that can be used for HTTP response done by the server. To give context of the response
+	- Age
+	- Location
+	- Server
+	- Proxy-Authenticate
+4.) Entity headers - is an HTTP header that describe the content body both HTTP request and response.
+	- Content-Language
+	- Content-Encoding
+	- Content-Length
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+https://developer.mozilla.org/en-US/docs/Glossary/General_header
+https://developer.mozilla.org/en-US/docs/Glossary/Request_header
+https://developer.mozilla.org/en-US/docs/Glossary/Response_header
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Connection
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Keep-Alive
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Proxy-Authenticate
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/TE
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Date
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization
