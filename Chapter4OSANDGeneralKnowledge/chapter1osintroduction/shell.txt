@@ -40,3 +40,15 @@ Tips
 	mkdir - create directories
 	ln - create symbolic link
 
+Working with own commands
+	type - Indicate how a command name is interpreted
+	which - Display which executable program will be executed
+	help - Get help for shell bins
+		help cd 
+		mkdir --help
+	man - Display a command's manual page
+	apropos -  Display a list of appropriate commands
+	info - Display command info 
+	whatis - Display one-line manual page desc
+	alias - Create an alias for command
+	
