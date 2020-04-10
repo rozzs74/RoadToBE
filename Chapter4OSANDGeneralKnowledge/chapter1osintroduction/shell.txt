@@ -1,0 +1,42 @@
+Author: John Royce C. Punay
+Date: April 10, 2020 2:30 PM
+
+Objectives: To have solid understanding of terminal usage using Linux shell command line.
+
+
+Why use the command line?
+	- It's been said that “graphical user interfaces make
+		easy tasks easy, while command line interfaces make difficult tasks possible” and this is
+		still very true today.
+
+What is the shell ?
+	- When we speak of the command line, we are really referring to the shell.
+	- The shell is a program that takes keyboard commands and passes them to the operating system to carry
+		out.
+	- bash “Bourne Again SHell”, enhanced replacement for sh, the original Unix shell program written by
+		Steve Bourne.
+
+Tips
+	$ - Current working directory
+		username@machinename e.g: royce@royce-pc$:
+	# - Super user privileges, meaning logged in as root user or admin.
+	cal - display month calendar
+	df - display current amount of space disk drives
+	free - display amount of free memory
+	exit - end terminal
+	pwd  - print working directory
+	cd - change directory
+		cd -
+	ls - list content of directory
+		ls -lahF
+		ls ~ /usr
+	file - Determine file type 
+	less - View text files, by examine the content.
+		- Can be binary content but the system will ask you to open.
+	cp - copy files and directories (Usage: Manipulating)
+	mv  - move and rename files and directories (Usage: Manipulating)
+	rm - remove files and directories (Usage: Manipulating)
+	lb - create hard and symbolic links (Usage: Manipulating)
+	mkdir - create directories
+	ln - create symbolic link
+
