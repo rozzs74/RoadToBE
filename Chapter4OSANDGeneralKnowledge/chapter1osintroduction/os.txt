@@ -1,0 +1,70 @@
+Author: John Royce C. Punay
+Date: April 10, 2020 12:7 
+
+Objectives: To recall and gain solid understanding about the Operating Systems
+
+
+
+OS (Operating System) 
+	- Acts as an intermediary (link together) and software between user of
+	computer and the computer hardware.
+	- OS can be found everywhere like car, home appliances, mobile phones, cloud computing environment, pc, enterprise computer, IOT
+Purpose of OS
+	- Provide environment in which user can execute programs in convenient and 
+	   efficient manner.
+
+What OS do?
+	Computer systems 
+		Components
+			a.) Hardware - compromise of CPU, memory, storage, I/O devices
+			b.) OS - The environment for executing application programs.
+			c.) Application programs - compilers, web browsers, spreadsheet etc. This is the one that solved user's problem.
+			d.) User - The one that used computer.
+		Usage
+			a.) Fundamental goal is to execute programs and make solving user problem easier.
+	User View 
+		a.) In order for user to make benefit of the resources, The OS is designed 
+			for "ease of use" and "resource utilization".
+		b) Abstract view of computer system from top to bottom:
+			- User 
+			- Application programs (web browsers, compilers, dev kits, etc)
+			- OS 
+			- Computer hardware (CPU, memory, I/O devices etc)
+		c) The age of mobile phones, as lots of users today interacting with 
+			mobile device instead of PC or laptop in which connected to the 
+			cellular network or wireless technology using touch screen. 
+				- Voice recognetion
+				- Camera 
+	System View
+		a.) Under computer system there are lot of resouces and one primary responsibility 
+			of OS is to do "resource allocator" to solve problem. Like 
+			- CPU time 
+			- memory space 
+			- storage 
+			- I/O devices
+		b.) The manager of computer system is the OS by deciding how to allocate 
+			correct resources on the request efficiently and faily.
+		c.) Under a system view the OS is a control program, that manages 
+			the execution of user programs by preventing errors and improper 
+			use of the computer.
+	Defining the OS 
+		a.) In general no complete adequate definition of OS, it exists to solve problem 
+			on the computing system.
+		b.) The common definition and followed by others is that a program running at all tmes on the 
+			computer called "kernel".
+		c.) For the modern times, the mobile OS is not only using the kernel also the 
+			"middleware" the set of frameworks that provides ease application developer.
+
+Computer-System Organization
+	a.) Device controllers are connected to common "system bus" and the 
+	 interface is "device driver" so the OS understand what it does to solve problem.
+
+	 Interrupts
+	 	a.) Stop things immediately by sending a signal. Can be I/O operation.
+		Mechanisim
+			1.) Interrupt vector - an array of addressess that is assigned by 
+				indexed number.
+			2.) Interrupt request line - a line request that whenever interruption it will be displayed here.
+			3.) Interrupt handler - when CPU detects controller signal on interrup request line it 
+				reads the interrupt number as an index into interrupt vector. By doing 
+				saves the current state, check the interrupt, perform state restore.
