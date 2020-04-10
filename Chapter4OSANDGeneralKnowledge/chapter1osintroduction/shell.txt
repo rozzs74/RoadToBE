@@ -51,4 +51,35 @@ Working with own commands
 	info - Display command info 
 	whatis - Display one-line manual page desc
 	alias - Create an alias for command
-	
+
+I/O redirection - by means we can input / output commands to and from other files , 
+	or multiple commands.
+	cat - Concatenate files 
+	sort - Sort lines of text
+	uniq - Report or omit repeated lines
+	grep - Print lines matching with a pattern
+	wc - Print newline, word and byte counts for each file
+	head - Output first part of the file
+	tail - Output last part of file
+	tee - Read from standard input and write to standard output files
+	> - Redirect and overwritten can be file name or path. Create files or folder
+	>> - Redirect Posix systems but not overwritten instead append new item from the existing file.
+		Redirect STDERR
+			ls -l /usr/bin > ls-output.txt
+			ls -l /bin/usr 2> ls-error.txt (Redirect using stderr w/ file descriptor "2")
+			ls -l /bin/usr > ls-output.txt 2>&1 (Redirect using stderr and stdout w/ file descriptor "1" and "2")
+			ls -l /bin/usr &> ls-output.txt 
+			ls -l /bin/usr 2> /dev/null (Disposing unwanted output aka silence is golde)
+			/dev/null - Is a system device or bitbucket which accept input and does nothing.
+		Redirect STDIN
+			cat ls-output.txt // Assume the text file is exsiting
+			cat movie.mpeg.0* > movie.mpeg
+				- An example of wildcard matching for multiple files with same name.
+			cat
+				- When you enter a cat with no argument it will function as read line input	
+					as this command is categorized at STDIN typing argument which is 
+					a keyboard already an INPUT would only display the output as STDOUT.
+			cat >> lazy_dog.txt
+				- Means redirect STDIN to a file and append content.
+			cat < lazy_dog.txt
+				- Change the source to a command from the file lazy_dog.txt
