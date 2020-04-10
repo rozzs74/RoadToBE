@@ -24,14 +24,14 @@ Tips
 	df - display current amount of space disk drives
 	free - display amount of free memory
 	exit - end terminal
-	pwd  - print working directory
-	cd - change directory
+	pwd  - print working directory (Usage: Navigation)
+	cd - change directory (Usage: Navigation)
 		cd -
-	ls - list content of directory
+	ls - list content of directory  (Usage: Navigation)
 		ls -lahF
 		ls ~ /usr
-	file - Determine file type 
-	less - View text files, by examine the content.
+	file - Determine file type  (Usage: Exploring the system)
+	less - View text files, by examine the content. (Usage: Exploring the system)
 		- Can be binary content but the system will ask you to open.
 	cp - copy files and directories (Usage: Manipulating)
 	mv  - move and rename files and directories (Usage: Manipulating)
