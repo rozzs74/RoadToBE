@@ -68,3 +68,33 @@ Computer-System Organization
 			3.) Interrupt handler - when CPU detects controller signal on interrup request line it 
 				reads the interrupt number as an index into interrupt vector. By doing 
 				saves the current state, check the interrupt, perform state restore.
+
+	Storage structure 
+		a.) A rewritable small memory is called main memory or Random-Access-Memory
+		b.) RAM is a volatile because when the PC turned off all instructions will be gone.
+		c.) Storage hierarchy
+			Registers (Volatile, Primary storage, faster, smaller)
+			Cache (Volatile, Primary storage, faster, smaller)
+			Main memory (Volatile, Primary storage)
+			Nonvolatile (non volatile, Secondary storage, slower, larger)
+			HDD (non volatile, Secondary storage, slower, larger)
+			Optical disk (non volatile, Tertiary storage, slower, larger)
+			Magnetic tapes (non volatile, Tertiary storage, slower, larger)
+
+	OS operation
+		a.) Multiprogramming and multitasking	
+		b.) Resource management 
+			Process Management
+				- A program can do nothing unless its instructions are executed by a CPU. Where as program execution is a process
+				-  It is possible to provide system calls that allow processes to create subprocesses to execute concurrently.
+				- A process needs certain resources, CPU time, memory files and I/O devices so that ask would accomplish.
+				- When the process terminates the assigned resources will be claimed by operating system.
+				- A process is the unit of work in a system.
+			Memory Management
+				- The main memory is central to the operation of a
+					modern computer system. Main memory is a large array of bytes, ranging in size from hundreds of thousands to billions. 
+				- For a program to be executed, it must be mapped to absolute addresses and loaded into memory
+				-  As the program executes, it accesses program instructions and data from memory by generating these absolute addresses.
+				- Eventually, the program terminates, its memory space is declared available, and the next program can be loaded and executed.
+
+https://www.geeksforgeeks.org/difference-between-multitasking-multithreading-and-multiprocessing/
