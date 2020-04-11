@@ -26,6 +26,7 @@ Commmands
 		free - display amount of free memory
 		exit - end terminal
 		clear - clear command
+		printenv | less - Prints all variable of the machine
 	Navigation:
 		pwd  - print working directory
 		cd - change directory
@@ -135,3 +136,64 @@ Commmands
 					Example: 
 						ls /usr/bin | tee ls.txt | grep zip
 						What it does, copied all content then save to a file exclude a file with a "zip" word.
+
+	Expansion (technique) which is the most useful content.
+		- For this we will just expand the value coming out from the command. A good example is echo
+			echo $PATH
+			echo 
+			echo hello world
+			echo "hello world"
+		- Path name expansions are technique that utilise wildcards on a given path.
+			echo * 
+			echo D*
+			echo [[:lower:]]*
+			echo [[:upper:]]*
+			echo .*
+			echo .[!.]*
+		- Tilde (~) - When this symbol is used in the beginning of a word,
+				it expands "Home directory of the user".
+			Example:
+			echo ~
+			echo $HOME
+			ls ~ > ls2.txt
+			echo ~ > ls3.txt
+			If home directory has royce run this 
+				echo ~royce
+		- Arithmetic - allowing arithmetic operaion
+			$((expression))
+			+,-,/,*,%,**
+				echo $((2+2))
+				echo $(((5**2) * 3))
+		- Brace - strangest expansion by creating multiple strings from the pattern 
+				containing the braces.
+				echo Front-{A,B,C}-Back
+				ecyo royce{1,2,3} --> royce1 royce2 royce3
+				echo royce{1..3} --> royce1 royce2 royce3
+				echo {0..10} --> 0 1 2 3 4 5 6 7 8 9 10
+				echo {A..Z} --> A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+				echo {Z..A} --> Output is the reverse of alphabetical letters
+				A nested brace expansion - echo a{A{1,2},B{3,4}}b --> aA1b aA2b aB3b aB4b
+				mkdir {0..1}
+		- Parameter - Introduces $
+			- Store small chunks of data and give it a name or simple called a variable
+				echo $USER --> me
+				printenv | less
+				a=100
+				echo $a --> 100
+		- Command substitution - allowing to output the command as an expansion
+			echo $(ls)
+		 	ls -l $(which cp) -->  -rwxr-xr-x 1 royce 197121 101764 Oct  5  2017 /usr/bin/cp*
+			file $(ls -d /usr/bin/* | grep zip)
+			- backqoutes - is the substitution for command under old bash version
+				ls -l `which cp` -->  -rwxr-xr-x 1 royce 197121 101764 Oct  5  2017 /usr/bin/cp*
+		- Qoutes 
+			 echo this is a test --> this is a test
+			 echo The total is $100.00 --> The total is 00.00
+			 echo "this is a test" --> this is a test
+		- Escaping char
+			 echo "Total is \$100" --> Total is $100
+
+
+https://www.unix.com/shell-programming-and-scripting/60266-how-find-out-home-directory-user.html
+https://l.facebook.com/l.php?u=https%3A%2F%2Faskubuntu.com%2Fquestions%2F382793%2Fwhats-is-the-difference-between-and-in-shell-command%3Ffbclid%3DIwAR2v_JJIrEGEgof9WqjiiFdOrEUoHL8XgUYbO00XflbX2obGih5RytbiCMw&h=AT1R-A8kWIeTUpKlUj6D5YzBeKk0aAnJv5VaGp7mIF_HPYTkKmOOdVMqKJewBkoXz1buts_C-VPbjoR2hkyKm1iFS_of79dA-XDYfzeTu783bDBJ5_QgZmWnuos6CZlQ&__tn__=H-R&c[0]=AT3GXsh-h099E55Jc3hdcmpVjxQU99TO6JOPMsjqPyDpfSZF65wXOYgy_3uu0tg0Op5hiGPrU2JfmgQvNTKfR8d5wUNziRCkRh2QgDhCUB7PtF8j4PSv7f8C1IaHyyLFgA7ImTML6dnnXBdgzIxUdQ
+https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
