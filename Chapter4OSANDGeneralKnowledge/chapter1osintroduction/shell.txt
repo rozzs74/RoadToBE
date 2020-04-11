@@ -193,6 +193,17 @@ Commmands
 		- Escaping char
 			 echo "Total is \$100" --> Total is $100
 
+	History  (1000 commands)
+		- The list of commands are being kept at .bash_history file.
+		Example
+			history | less -> Display all commands history
+			history | grep echo
+			less | sort ~/.bash_history
+			tail -f ~/.bash_history --> This to check all of the history command in real time.
+			!<no in history line> This what we called history expansion let say 1: echo 1
+			!1 --> echo 1
+
+
 
 https://www.unix.com/shell-programming-and-scripting/60266-how-find-out-home-directory-user.html
 https://l.facebook.com/l.php?u=https%3A%2F%2Faskubuntu.com%2Fquestions%2F382793%2Fwhats-is-the-difference-between-and-in-shell-command%3Ffbclid%3DIwAR2v_JJIrEGEgof9WqjiiFdOrEUoHL8XgUYbO00XflbX2obGih5RytbiCMw&h=AT1R-A8kWIeTUpKlUj6D5YzBeKk0aAnJv5VaGp7mIF_HPYTkKmOOdVMqKJewBkoXz1buts_C-VPbjoR2hkyKm1iFS_of79dA-XDYfzeTu783bDBJ5_QgZmWnuos6CZlQ&__tn__=H-R&c[0]=AT3GXsh-h099E55Jc3hdcmpVjxQU99TO6JOPMsjqPyDpfSZF65wXOYgy_3uu0tg0Op5hiGPrU2JfmgQvNTKfR8d5wUNziRCkRh2QgDhCUB7PtF8j4PSv7f8C1IaHyyLFgA7ImTML6dnnXBdgzIxUdQ
