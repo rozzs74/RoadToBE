@@ -16,70 +16,122 @@ What is the shell ?
 	- bash “Bourne Again SHell”, enhanced replacement for sh, the original Unix shell program written by
 		Steve Bourne.
 
-Tips
-	$ - Current working directory
-		username@machinename e.g: royce@royce-pc$:
-	# - Super user privileges, meaning logged in as root user or admin.
-	cal - display month calendar
-	df - display current amount of space disk drives
-	free - display amount of free memory
-	exit - end terminal
-	pwd  - print working directory (Usage: Navigation)
-	cd - change directory (Usage: Navigation)
-		cd -
-	ls - list content of directory  (Usage: Navigation)
-		ls -lahF
-		ls ~ /usr
-	file - Determine file type  (Usage: Exploring the system)
-	less - View text files, by examine the content. (Usage: Exploring the system)
-		- Can be binary content but the system will ask you to open.
-	cp - copy files and directories (Usage: Manipulating)
-	mv  - move and rename files and directories (Usage: Manipulating)
-	rm - remove files and directories (Usage: Manipulating)
-	lb - create hard and symbolic links (Usage: Manipulating)
-	mkdir - create directories
-	ln - create symbolic link
+Commmands
+	Useful:
+		$ - Current working directory
+			username@machinename e.g: royce@royce-pc$:
+		# - Super user privileges, meaning logged in as root user or admin.
+		cal - display month calendar
+		df - display current amount of space disk drives
+		free - display amount of free memory
+		exit - end terminal
+		clear - clear command
+	Navigation:
+		pwd  - print working directory
+		cd - change directory
+			cd -
+		ls - list content of directory 
+			- ls -lahF
+			- ls ~ /usr
+	Exploring the system:
+		file - Determine file type 
+		less - View text files, by examine the content.
+			- Can be binary content but the system will ask you to open.
+	Manipulating:
+		cp - copy files and directories
+		mv  - move and rename files and directories
+		rm - remove files and directories
+		lb - create hard and symbolic links
+		mkdir - create directories
+		ln - create symbolic link
 
-Working with own commands
-	type - Indicate how a command name is interpreted
-	which - Display which executable program will be executed
-	help - Get help for shell bins
-		help cd 
-		mkdir --help
-	man - Display a command's manual page
-	apropos -  Display a list of appropriate commands
-	info - Display command info 
-	whatis - Display one-line manual page desc
-	alias - Create an alias for command
+	Working with own commands
+		type - Indicate how a command name is interpreted
+		which - Display which executable program will be executed
+		help - Get help for shell bins
+			help cd 
+			mkdir --help
+		man - Display a command's manual page
+		apropos -  Display a list of appropriate commands
+		info - Display command info 
+		whatis - Display one-line manual page desc
+		alias - Create an alias for command
 
-I/O redirection - by means we can input / output commands to and from other files , 
-	or multiple commands.
-	cat - Concatenate files 
-	sort - Sort lines of text
-	uniq - Report or omit repeated lines
-	grep - Print lines matching with a pattern
-	wc - Print newline, word and byte counts for each file
-	head - Output first part of the file
-	tail - Output last part of file
-	tee - Read from standard input and write to standard output files
-	> - Redirect and overwritten can be file name or path. Create files or folder
-	>> - Redirect Posix systems but not overwritten instead append new item from the existing file.
-		Redirect STDERR
-			ls -l /usr/bin > ls-output.txt
-			ls -l /bin/usr 2> ls-error.txt (Redirect using stderr w/ file descriptor "2")
-			ls -l /bin/usr > ls-output.txt 2>&1 (Redirect using stderr and stdout w/ file descriptor "1" and "2")
-			ls -l /bin/usr &> ls-output.txt 
-			ls -l /bin/usr 2> /dev/null (Disposing unwanted output aka silence is golde)
-			/dev/null - Is a system device or bitbucket which accept input and does nothing.
-		Redirect STDIN
-			cat ls-output.txt // Assume the text file is exsiting
-			cat movie.mpeg.0* > movie.mpeg
-				- An example of wildcard matching for multiple files with same name.
-			cat
-				- When you enter a cat with no argument it will function as read line input	
-					as this command is categorized at STDIN typing argument which is 
-					a keyboard already an INPUT would only display the output as STDOUT.
-			cat >> lazy_dog.txt
-				- Means redirect STDIN to a file and append content.
-			cat < lazy_dog.txt
-				- Change the source to a command from the file lazy_dog.txt
+	Redirection 
+		- I/O redirection or redirect - by means we can input / output commands to and from other files , 
+		or multiple commands.
+		cat - Concatenate files 
+		sort - Sort lines of text
+		uniq - Report or omit repeated lines
+		grep - Print lines matching with a pattern
+		wc - Print newline, word and byte counts for each file
+		head - Output first part of the file
+		tail - Output last part of file
+		tee - Read from standard input and write to standard output files
+		> (Overwrite)- Redirect and overwritten can be file name or path. Create files or folder
+		>> - Redirect Posix systems but not overwritten instead append new item from the existing file.
+			Redirect STDERR
+				ls -l /usr/bin > ls-output.txt
+				ls -l /bin/usr 2> ls-error.txt (Redirect using stderr w/ file descriptor "2")
+				ls -l /bin/usr > ls-output.txt 2>&1 (Redirect using stderr and stdout w/ file descriptor "1" and "2")
+				ls -l /bin/usr &> ls-output.txt 
+				ls -l /bin/usr 2> /dev/null (Disposing unwanted output aka silence is golde)
+				/dev/null - Is a system device or bitbucket which accept input and does nothing.
+			Redirect STDIN
+				cat ls-output.txt // Assume the text file is exsiting
+				cat movie.mpeg.0* > movie.mpeg
+					- An example of wildcard matching for multiple files with same name.
+				cat
+					- When you enter a cat with no argument it will function as read line input	
+						as this command is categorized at STDIN typing argument which is 
+						a keyboard already an INPUT would only display the output as STDOUT.
+				cat >> lazy_dog.txt
+					- Means redirect STDIN to a file and append content.
+				cat < lazy_dog.txt
+					- Change the source to a command from the file lazy_dog.txt
+			Pipelines ( | ) 
+				- Commmands capability to read data as stdinput and send data to stdoutput.
+				in short a pipeline is a handy tool and technique to examine the output.
+				- Often used for to perform complex operations on data.
+				- Possible to put multiple commands chained by the pipeline symbol
+
+				- Syntax: <command> | <command>
+					Example
+						ls -l /usr/bin | less 
+						ls | less
+						ls -lahFt | less >> lazy_dog.txt 
+							- Combo for Navigation, Exploring and redirect 
+						Pro tip: 
+						Dont run ls > less inside /usr/bin.
+			Filters (uniq, sort, wc)
+				- Similar to pipeline but the output of the data is being filetered after running 
+					multiple commands
+				- sort command is an stdinput which sort the stdout
+				Example
+					ls /bin /usr/bin | sort | less
+					ls | sort
+					sort a,b,c,d
+				- uniq command is to remove duplication of data before doing stdout
+					ls /bin /usr/bin | sort | uniq | less
+					sort | uniq
+
+				- wc or stands for word count, this command is for displaying number of lines, words or even
+					bytes under file.
+					wc royce.text
+					ls /bin /usr/bin | sort | uniq | wc -l
+				- grep is a powerful program used to match text patterns within files.
+					when pattern matched from grep it will print out to the line.
+				 	Example: grep pattern [file....]
+					ls /bin /usr/bin | sort | uniq | grep ssh
+				- head and tail commands are for including first ten or last ten of the line
+					it can be adjusted using -n 
+					Example:
+						ls | head -n 5
+						head -n 5 royce.txt
+						tail -n 5 ls-output.txt
+						ls | tail -n 5
+						For real time include option -f 
+				- tee is a useful reads std input and stdout to a file
+					Example: 
+						ls /usr/bin | tee ls.txt | grep zip
+						What it does, copied all content then save to a file exclude a file with a "zip" word.
