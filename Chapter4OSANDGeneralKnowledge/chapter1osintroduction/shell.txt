@@ -465,23 +465,47 @@ Commmands
 			- sudo shutdown -r now
 
 
+	Configuration and Environment
+		- The place where system information attached is called environment.
+		- All program systems configuration can be found at environment.
+		- Whilst most programs used configuration file to store program settings.
+		- Having this setup we can adjust shell experience
+			printenv – Print part or all of the environment
+			set – Set shell options
+			export – Export environment to subsequently executed programs
+			alias – Create an alias for a command
 
+		Examining the environment
+			printenv | less
+			printenv <ENV variables>
+			echo <ENV variables>
+			royce@royce-PC MINGW64 ~/Documents/Dev/RoadToBE (master)
+			$ printenv USERNAME
+				royce
+			royce@royce-PC MINGW64 ~/Documents/Dev/RoadToBE (master)
+			$ echo $USERNAME
+				royce
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			To display all contents from environment variables and shell variables
+			set | less
+		How Is the environment Established?
+			-After we login our account the bash programs start reading series of 
+				configuration scripts called startup files.
+				- login shell session
+				- non login shell sessions
+				Start up files for login shell sessions
+					File				Content
+					/etc/profile		Global config for all users
+					~/.bash_profile		Personal startup file
+					~/.bash_login		If bash_profile is not found, bash attempts to read this script.
+					~/.profile			If neither ~/.bash_profile nor ~/.bash_login is found, bash attempts to read this file
+				Startup files for non login shells
+					File					Content
+				    /etc/bash.bashrc		Global config for all users
+					~/.bashrc 				A user's personal startup file. I
+				The export command tells the shell to make the contents of PATH available to child
+				processes of this shell.
+				export PATH
 
 
 
