@@ -297,17 +297,66 @@ Commmands
 						u+x,go=rx 	Add execute permission for the owner and set the permissions for
 									the group and others to read and execute. Multiple specifications
 									may be separated by commas.
+		
+		umask - a command that gives default permission to file using octal notation when its created.
+				- The value is always set to default (0022)
+				
+				Example
+				umask (octal representation hint ignore first digit still 002) --> 0002
+				umask -S (Symbolic representation)
+				> foo.txt 
+				ls -l foo.txt --> 
+		
+		Changing identities
+			su  - Command that start a shell as another user.
+				Requires to input super user password
+				su -
+				Password:
+				# (Root privileges)
+				su -c <command>
+				su -c 'ls -l /root/*'
+			sudo - A command that execute as another user. Similart to su 
+				but the difference is you must input user own password.
+				And not starting a new shell
+				- When you used the sudo first time, the system won't ask you the password for several 
+						minutes until time runs out.
+
+			chown - is used to change the owner and group owner of file or 
+					directory.
+				  - Superuser required to use this command.
+				chown [owner][:[group]] file...
+				[janet@linuxbox ~]$ sudo cp myfile.txt ~tony
+				Password:
+				[janet@linuxbox ~]$ sudo ls -l ~tony/myfile.txt
+				-rw-r--r-- 1 root root root 2018-03-20 14:30 /home/tony/myfile.txt
+				[janet@linuxbox ~]$ sudo chown tony: ~tony/myfile.txt
+				[janet@linuxbox ~]$ sudo ls -l ~tony/myfile.txt
+ 				-rw-r--r-- 1 tony tony tony 2018-03-20 14:30 /home/tony/myfile.txt
+
+				For an example scenario we may check Exercising Our Privileges page (106)
+			passwd - used to change user's password. At first it will be prompted 
+					to put your old password then your new password.
+				[me@linuxbox ~]$ passwd
+				(current) UNIX password:
+				New UNIX password:
+				BAD PASSWORD: is too similar to the old one
+				New UNIX password:
+				BAD PASSWORD: it is WAY too short
+				New UNIX password:
+				BAD PASSWORD: it is based on a dictionary word
+
+		Other commands related to users and group
+			adduser
+			useradd
+			groupadd
 
 
-
-
-
-
-
-
-
+				 
 https://www.unix.com/shell-programming-and-scripting/60266-how-find-out-home-directory-user.html
 https://l.facebook.com/l.php?u=https%3A%2F%2Faskubuntu.com%2Fquestions%2F382793%2Fwhats-is-the-difference-between-and-in-shell-command%3Ffbclid%3DIwAR2v_JJIrEGEgof9WqjiiFdOrEUoHL8XgUYbO00XflbX2obGih5RytbiCMw&h=AT1R-A8kWIeTUpKlUj6D5YzBeKk0aAnJv5VaGp7mIF_HPYTkKmOOdVMqKJewBkoXz1buts_C-VPbjoR2hkyKm1iFS_of79dA-XDYfzeTu783bDBJ5_QgZmWnuos6CZlQ&__tn__=H-R&c[0]=AT3GXsh-h099E55Jc3hdcmpVjxQU99TO6JOPMsjqPyDpfSZF65wXOYgy_3uu0tg0Op5hiGPrU2JfmgQvNTKfR8d5wUNziRCkRh2QgDhCUB7PtF8j4PSv7f8C1IaHyyLFgA7ImTML6dnnXBdgzIxUdQ
 https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
 https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html
 http://faculty.bucks.edu/cornelld/numbersystem.htm#base%202%20from%20base%208
+https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
+https://www.computerhope.com/unix/uumask.htm
+https://en.wikipedia.org/wiki/Malware
