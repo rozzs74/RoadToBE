@@ -350,6 +350,170 @@ Commmands
 			useradd
 			groupadd
 
+	Processes
+		- Modern OS systems are multitasking, by doing one or more jobs.
+		- This is managed by Linux kernel to the use of processes.
+		- Usage in command
+			1) To monitor our system if misbehaving because of task running
+			2) How to stop certain process
+			ps – Report a snapshot of current processes
+ 			top – Display tasks
+ 			jobs – List active jobs
+ 			bg – Place a job in the background
+ 			fg – Place a job in the foreground
+ 			kill – Send a signal to a process
+ 			killall – Kill processes by name
+ 			shutdown – Shutdown or reboot the system
+
+
+		How processes works?
+			- When a system starts up the kernel initiates the init.init function 
+				and its called as init scripts. The usage is to start system service.
+			- init scripts are being implemented through daemon programs that runs in the background.
+			- happening in real time even if we aren't login.
+			- The fact these running programs are expressed in the process scheme called prent process 
+				then producting child process.
+			
+			Viewing processes
+				ps - the command that allows user to display current processes.
+				$ ps
+					PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+					6680    3916    6680       6356  pty0      197608 13:45:42 /usr/bin/ps
+					5380       1    5380       5380  ?         197608 07:54:36 /usr/bin/mintty
+					3916    5380    3916       5244  pty0      197608 07:54:36 /usr/bin/bash
+				
+				To see bigger picture for current running process run this command:
+				ps x
+				x means show all processes regardless of the terminal or controlled by.
+				$ ps x
+					PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+					5380       1    5380       5380  ?         197608 07:54:36 /usr/bin/mintty
+					5552    3916    5552       4544  pty0      197608 13:49:30 /usr/bin/ps
+					3916    5380    3916       5244  pty0      197608 07:54:36 /usr/bin/bash
+
+				TTY means teletype 
+				? means no assigned controlling terminal to that process.
+
+				For easier viewing incorporate the ps with less:
+
+				ps | less
+
+				To view all processes for all users run this command.
+				ps aux
+
+					USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND
+					root 1 0.0 0.0 2136 644 ? Ss Mar05 0:31 init
+					root 2 0.0 0.0 0 0 ? S< Mar05 0:00 [kt]
+					root 3 0.0 0.0 0 0 ? S< Mar05 0:00 [mi]
+					root 4 0.0 0.0 0 0 ? S< Mar05 0:00 [ks]
+					root 5 0.0 0.0 0 0 ? S< Mar05 0:06 [wa]
+					root 6 0.0 0.0 0 0 ? S< Mar05 0:36 [ev]
+					root 7 0.0 0.0 0 0 ? S< Mar05 0:00 [kh]
+
+					USER =	User ID. This is the owner of the process.
+					%CPU = 	CPU usage in percent.
+					%MEM = 	Memory usage in percent.
+					VSZ  =	Virtual memory size.
+					RSS  = 	Resident set size. This is the amount of physical memory (RAM) the process is using in kilobytes.
+					START =	Time when the process started. For values over 24 hours, a date is used.
+
+
+			Viewing processes Dynamically with top
+				- To see more dynamic machine's activity use top command
+				- The top program displays a continuously updating (by default, every three seconds) display of the system processes listed in order of process activity
+				- top command is similar to task manager on the Windows 
+				- top
+			
+			Controlling Processes
+				- In terminal to interrupts a progam hit or pressed ctrl - c
+				- Used jobs to check active jobs in the shell
+				ampersand(&) Stands for background jobs
+				royce@royce-PC MINGW64 ~/Documents/Dev/RoadToBE (master)
+					$ sleep 100 &
+					[2] 2124
+
+				royce@royce-PC MINGW64 ~/Documents/Dev/RoadToBE (master)
+					$ jobs
+					[1]-  Running                 sleep 100 &
+					[2]+  Running    
+
+				To kill or stop process used kill commands
+				- kill <process ID>
+					royce@royce-PC MINGW64 ~/Documents/Dev/RoadToBE (master)
+					$ kill 2124
+					[2]+  Terminated              sleep 100
+					Number 		Name	 	Meaning
+					1			HUP		 	Hang up
+					2			INT			Interrupt
+					9			KILL		KILL, immediately terminate the process
+					15 			TERM		Terminate, if still alive it will terminate automatically
+					18			CONT		Continue
+					19			STOP		Stop
+					20 			TSTP		Terminal stop
+
+				kill <number> <PID>
+				kill -1 2124
+				[1]+  Hangup                  sleep 100
+				kill -INT 6980
+				[1]+  Interrupt               sleep 100
+				- killall, this is same concept with kill command
+
+
+			Shutdown the system
+			- sudo reboot
+			- sudo shutdown -h now
+			- sudo shutdown -r now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 				 
 https://www.unix.com/shell-programming-and-scripting/60266-how-find-out-home-directory-user.html
