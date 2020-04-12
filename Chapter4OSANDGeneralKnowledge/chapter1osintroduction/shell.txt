@@ -71,6 +71,8 @@ Commmands
 		tee - Read from standard input and write to standard output files
 		> (Overwrite)- Redirect and overwritten can be file name or path. Create files or folder
 		>> - Redirect Posix systems but not overwritten instead append new item from the existing file.
+			> haha.txt --> What it does create a file 
+			>> haha.txt --> What it does create an append content to a file if existing
 			Redirect STDERR
 				ls -l /usr/bin > ls-output.txt
 				ls -l /bin/usr 2> ls-error.txt (Redirect using stderr w/ file descriptor "2")
@@ -204,13 +206,14 @@ Commmands
 			!1 --> echo 1
 
 	Permissions
+		- An OS is not just multitasking system but also multiuser system
 		- Introducing the multi-user systems (feature), means one or more person
 			can use the same computer at the same time. 
 			When a computer attached to the network remote user can 
 			access the computer via ssh (secure shell) then operate the 
 			computer.
 
-		id – Display user identity
+		id – Display user identity display UID and GID (user identifer, group identifier)
  		chmod – Change a file's mode
  		umask – Set the default file permissions
  		su – Run a shell as another user
@@ -220,7 +223,91 @@ Commmands
 		passwd - Change a user's password
 
 
+	Owners, group members and everybody else
+		id --> uid=197608(royce) gid=197121 groups=197121
+			uid is mapped for a username, 
+			gid is the primary group
+
+		Owner-Group-World -> This is a syntax for permission
+		rwxrwxrwx
+		Write action (Create, Rename, Delete)
+		Read (Read)
+		Execute (Program executable, enter in the directory)
+		File types 
+		- (A regular file)
+		d (Directory)
+		l (Symbolic link)
+		c (Character or special file)
+		b (block special file)
+
+		Example
+		-rwx---- (File rwx by owner only)
+		rwxrwxrwx (File rwx by owner, group, everybody)
+		lrwxrwxrwx (Symlink that can be rxw by owner, group, everybody)
+		drwxrwx--- (Directory rwx by owner and group only)
+		drwxr-x--- (Directory rwx by owner and x by group)
+
+
+		chmod - A command that change mode permissions of file and directory.
+			This command can be only execute by file's owner or administrator (superuser)
+			Mode of changes
+			1.) Octal number representation
+				- Base 8 number system
+				- File modes and binary octal
+						421					    
+					0	000	---
+					1	001	--x
+					2 	010 -w-
+					3	011 -wx
+					4 	100 r--
+					5 	101	r-x
+					6 	110 rw-
+					7 	111 rwx
+				-rwx------ 		A regular file that is readable, writable, and executable by the file's owner. No one else has any access.
+				-rw------- 		A regular file that is readable and writable by the file's owner. No one else has any access.
+				-rw-r--r-- 		A regular file that is readable and writable by the file's owner. Members of the file's owner group may read the file. The file is world-readable.
+				-rwxr-xr-x 		A regular file that is readable, writable, and executable by thefile's owner. The file may be read and executed by everybody else.
+				-rw-rw---- 		A regular file that is readable and writable by the file's owner and members of the file's group owner only.
+				lrwxrwxrwx 		A symbolic link. All symbolic links have “dummy” permissions. The real permissions are kept with the actual file pointed to by the symbolic link.
+				drwxrwx--- 		A directory. The owner and the members of the owner group may enter the directory and create, rename and remove files within the directory.
+				drwxr-x--- 		A directory. The owner may enter the directory and create, rename, and delete files within the directory. Members of the owner group may
+				- chmod 700 royce.txt --> The owner of this granted rwx then group and others none
+			2.) Symbolic representation
+				Three parts 
+					- Who the change will affect
+					- Which operation will be performed
+					- What permission will be set
+					
+				 		u - user or owner of the directory
+						g - Group owner
+						o - others means world or everybody
+						a - all combined of u,g,o or if no symbol to be found
+						+ means permission added 
+						- means permission removed
+						= means specified permission
+						u+x 		Add execute permission for the owner.
+						u-x 		Remove execute permission from the owner.
+						+x 			Add execute permission for the owner, group, and world. This is
+									equivalent to a+x.
+						o-rw 		Remove the read and write permissions from anyone besides the
+									owner and group owner.
+						go=rw 		Set the group owner and anyone besides the owner to have read and
+									write permission. If either the group owner or the world previously
+									had execute permission, it is removed.
+						u+x,go=rx 	Add execute permission for the owner and set the permissions for
+									the group and others to read and execute. Multiple specifications
+									may be separated by commas.
+
+
+
+
+
+
+
+
+
 https://www.unix.com/shell-programming-and-scripting/60266-how-find-out-home-directory-user.html
 https://l.facebook.com/l.php?u=https%3A%2F%2Faskubuntu.com%2Fquestions%2F382793%2Fwhats-is-the-difference-between-and-in-shell-command%3Ffbclid%3DIwAR2v_JJIrEGEgof9WqjiiFdOrEUoHL8XgUYbO00XflbX2obGih5RytbiCMw&h=AT1R-A8kWIeTUpKlUj6D5YzBeKk0aAnJv5VaGp7mIF_HPYTkKmOOdVMqKJewBkoXz1buts_C-VPbjoR2hkyKm1iFS_of79dA-XDYfzeTu783bDBJ5_QgZmWnuos6CZlQ&__tn__=H-R&c[0]=AT3GXsh-h099E55Jc3hdcmpVjxQU99TO6JOPMsjqPyDpfSZF65wXOYgy_3uu0tg0Op5hiGPrU2JfmgQvNTKfR8d5wUNziRCkRh2QgDhCUB7PtF8j4PSv7f8C1IaHyyLFgA7ImTML6dnnXBdgzIxUdQ
 https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
 https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html
+http://faculty.bucks.edu/cornelld/numbersystem.htm#base%202%20from%20base%208
