@@ -508,13 +508,26 @@ Commmands
 				export PATH
 
 
+	Gentle indroduction to VI
+		VI is an unix text editor
+		Why we should learn VI
+			- vi is highly available because POSIX based system 
+				requires vi to be present?
+			- vi is lightweight and fast
+			- Not cowards
+			- vi stands for visual due to editing video terminal with a moving cursor.
+			- vim stands for vi improved, as symbolic link to vi functionality
 
+			Cursor movement keys
+			l - right
+			h - left
+			j - down
+			k - up
 
-
-
-
-
-
+			Deleting a text 
+			x - current char
+			dd - current line
+	
 
 
 
