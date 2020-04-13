@@ -517,7 +517,7 @@ Commmands
 			- Not cowards
 			- vi stands for visual due to editing video terminal with a moving cursor.
 			- vim stands for vi improved, as symbolic link to vi functionality
-
+			~ - Indicating line is empty
 			Cursor movement keys
 			l - right
 			h - left
@@ -527,9 +527,17 @@ Commmands
 			Deleting a text 
 			x - current char
 			dd - current line
-	
 
+			y - copy a text
+			p - paste a text
+		Editing multiple files
 
+		vi file1 file2
+		:bn - go to next file
+		:bp - previous file
+		:buffers - Display files that is being editing
+		:buffer <n> - Number of number to switch
+		:e! <filename> - While active on editing session you can switch by running the command
 
 
 
