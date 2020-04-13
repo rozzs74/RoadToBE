@@ -539,6 +539,74 @@ Commmands
 		:buffer <n> - Number of number to switch
 		:e! <filename> - While active on editing session you can switch by running the command
 
+	Networking
+		- Linux is buidld for all sorts of networking systems.
+
+		ping – Send an ICMP ECHO_REQUEST to network hosts
+		traceroute – Print the route packets trace to a network host
+		ip – Show / manipulate routing, devices, policy routing and tunnels
+		netstat – Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+		ftp – Internet file transfer program
+		wget – Non-interactive network downloader
+		ssh – OpenSSH SSH client (remote login program)
+
+
+		ping - a command that sends ICMP ECHO_REQUEST to the host. To verify 
+			if that network host is up and running.
+
+			- Note its possible in the network infra to disable incoming ECHO_REQUEST 
+				for security reasons. Specific block ICMP traffic.
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ ping linuxcommand.org
+
+			Pinging linuxcommand.org [216.105.38.10] with 32 bytes of data:
+			Reply from 216.105.38.10: bytes=32 time=177ms TTL=49
+			Reply from 216.105.38.10: bytes=32 time=177ms TTL=49
+			Reply from 216.105.38.10: bytes=32 time=177ms TTL=49
+			Reply from 216.105.38.10: bytes=32 time=828ms TTL=49
+
+			Ping statistics for 216.105.38.10:
+				Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+			Approximate round trip times in milli-seconds:
+				Minimum = 177ms, Maximum = 828ms, Average = 339ms
+			
+			On a side note after interrupt it will display the packet history.
+			A properly performing network will exhibit 0 percent packet
+			loss. A successful “ping” will indicate that the elements of the network (its interface
+			cards, cabling, routing, and gateways) are in generally good working order. 
+
+
+
+		traceroute - list all network "hop" traffic from a local system to 
+			specified host.
+
+		ip aka ifconfig - display network interfaces
+
+		netstat - examine various network settings and statistics.
+		netstat -r (Display routing table)
+
+
+		ftp - stands for File Transfer Protocol, a command that able to transfer file over network
+				ftp is not secured moving files under the hood is not encrypted.
+
+		wget - To download content from websites you can use this command.
+
+		Secure communication with remote hosts
+			- Using ssh you can access specified host securely.
+
+			Two reasons why SSH is used:
+			1. It authenticates that the remote host is who it says it is (thus preventing so-called man-in-the-middle attacks).
+			2. It encrypts all of the communications between the local and remote hosts.
+
+			Components of SSH
+			1) ssh server - runs in the hosts and listen for incoming connection
+			2) ssh client - used local system to connect remote server
+			SSH uses port 22
+			Lots of linux distribution now migrating to openSSH for long term support
+			You can use tunnling with SSH via encrypted tunnel for local and remote systems.
+
+		For SSH Windows client you can use putty to access a remote server.
 
 
 
@@ -546,21 +614,6 @@ Commmands
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-				 
 https://www.unix.com/shell-programming-and-scripting/60266-how-find-out-home-directory-user.html
 https://l.facebook.com/l.php?u=https%3A%2F%2Faskubuntu.com%2Fquestions%2F382793%2Fwhats-is-the-difference-between-and-in-shell-command%3Ffbclid%3DIwAR2v_JJIrEGEgof9WqjiiFdOrEUoHL8XgUYbO00XflbX2obGih5RytbiCMw&h=AT1R-A8kWIeTUpKlUj6D5YzBeKk0aAnJv5VaGp7mIF_HPYTkKmOOdVMqKJewBkoXz1buts_C-VPbjoR2hkyKm1iFS_of79dA-XDYfzeTu783bDBJ5_QgZmWnuos6CZlQ&__tn__=H-R&c[0]=AT3GXsh-h099E55Jc3hdcmpVjxQU99TO6JOPMsjqPyDpfSZF65wXOYgy_3uu0tg0Op5hiGPrU2JfmgQvNTKfR8d5wUNziRCkRh2QgDhCUB7PtF8j4PSv7f8C1IaHyyLFgA7ImTML6dnnXBdgzIxUdQ
 https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
@@ -569,3 +622,5 @@ http://faculty.bucks.edu/cornelld/numbersystem.htm#base%202%20from%20base%208
 https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
 https://www.computerhope.com/unix/uumask.htm
 https://en.wikipedia.org/wiki/Malware
+https://www.chiark.greenend.org.uk/~sgtatham/putty/
+http://tldp.org/LDP/nag2/index.html
