@@ -608,7 +608,25 @@ Commmands
 
 		For SSH Windows client you can use putty to access a remote server.
 
+	Searching for files 
+		- Due to lot of files, we can search a certain file using the commands below.
+		locate – Find files by name
+		find – Search for files in a directory hierarchy
+		xargs – Build and execute command lines from standard input In addition, we will introduce a couple of commands to assist us in our explorations.
+		touch – Change file times
+		stat – Display file or file system status
 
+		locate <file name>
+
+			[me@linuxbox ~]$ locate bin/zip
+			/usr/bin/zip
+			/usr/bin/zipcloak
+			/usr/bin/zipgrep
+			/usr/bin/zipinfo
+			/usr/bin/zipnote
+			/usr/bin/zipsplit
+
+		find - a command that find a certain file or directory thorught the system.
 
 
 
