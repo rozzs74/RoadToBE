@@ -678,7 +678,173 @@ Commmands
 		tar cf sim.tar sim
 		tar tf sim.tar
 
-		
+	Regular Expressions
+		 - Tools used to manipulate texts.
+		- A symbolic notation to identify patterns in text.
+		- A regex is available in many programming language to facilitate solution on text manipulation
+
+		- When it comes to command the grep is the one that uses regular expressions
+		- grep stands for global regular expression print.
+		- In sense grep search files occurence on the text matching
+
+		grep <pattern> <file>
+		royce@royce-PC MINGW64 ~/Documents/Dev/RoadToBE (master)
+		$ ls /usr/bin | grep zip
+			bunzip2.exe*
+			bzip2.exe*
+			bzip2recover.exe*
+			funzip.exe*
+			gpg-zip*
+			gunzip*
+			gzip.exe*
+			unzip.exe*
+			unzipsfx.exe*
+			zipgrep*
+			zipinfo.exe*
+		$ ls dirlist*.txt
+		dirlist-bin.txt  dirlist-sbin.txt  dirlist-usr-bin.txt
+
+		[me@linuxbox ~]$ grep bzip dirlist*.txt
+			dirlist-bin.txt:bzip2
+			dirlist-bin.txt:bzip2recover
+
+		royce@royce-PC MINGW64 ~/Documents/Dev/RoadToBE (master)
+			$ grep -h '.zip' dirlist*.txt
+			bunzip2.exe*
+			bzip2.exe*
+			bzip2recover.exe*
+			funzip.exe*
+			gpg-zip*
+			gunzip*
+			gzip.exe*
+			unzip.exe*
+			unzipsfx.exe*
+			bunzip2.exe*
+			bzip2.exe*
+			bzip2recover.exe*
+			funzip.exe*
+			gpg-zip*
+			gunzip*
+			gzip.exe*
+			unzip.exe*
+			unzipsfx.exe*
+
+		Anchors
+		^ -beginning of the word
+		$ - end of the line
+
+		royce@royce-PC MINGW64 ~/Documents/Dev/RoadToBE (master)
+			$ grep -h '^zip' dirlist*.txt
+			zipgrep*
+			zipinfo.exe*
+			zipgrep*
+			zipinfo.exe*
+
+		[me@linuxbox ~]$ grep -h 'zip$' dirlist*.txt
+			gunzip
+			gzip
+			funzip
+			gpg-zip
+			preunzip
+			prezip
+			unzip
+			zip
+		[me@linuxbox ~]$ grep -h '^zip$' dirlist*.txt
+			zip
+
+	Bracket expressions and character classes
+		- Search a specified chracters using grep by bracket
+		$ grep -h '[bg]zip' dirlist*.txt
+			bzip2.exe*
+			bzip2recover.exe*
+			gzip.exe*
+			bzip2.exe*
+			bzip2recover.exe*
+			gzip.exe*
+	Negation using caret and bracket 
+
+	[me@linuxbox ~]$ grep -h '^[A-Z]' dirlist*.txt
+		MAKEDEV
+		ControlPanel
+		GET 
+
+	grep -h '^[A-Za-z0-9]' dirlist*.txt
+	grep -h '[A-Z]' dirlist*.txt
+	grep -h '[-AZ]' dirlist*.txt
+
+	Example of POSIX character class instead of regex
+		ls ~/Documents/dev/[A-Z]*
+		ls ~/Documents/[[:upper:]]* 
+		ls ~/Documents/[[:lower:]]* 
+	
+	BRE (Basic regular expressions)
+		^ $ . [ ] *
+	ERE (Extended regular expression)
+		( ) { } ? + |
+
+	POSIX
+		During the 1980’s, Unix became a very popular commercial operating system, but
+		by 1988, the Unix world was in turmoil. Many computer manufacturers had licensed the Unix source code from its creators, AT&T, and were supplying various
+		versions of the operating system with their systems. However, in their efforts to
+		create product differentiation, each manufacturer added proprietary changes and
+		extensions. This started to limit the compatibility of the software. As always with
+		proprietary vendors, each was trying to play a winning game of “lock-in” with
+		their customers. This dark time in the history of Unix is known today as “the
+		Balkanization.”
+		Enter the Institute of Electrical and Electronics Engineers (IEEE). In the mid1980s, the IEEE began developing a set of standards that would define how Unix
+		(and Unix-like) systems would perform. These standards, formally known as
+		IEEE 1003, define the application programming interfaces (APIs), shell and utilities that are to be found on a standard Unix-like system. The name POSIX, which
+		stands for Portable Operating System Interface (with the X added to the end for
+		extra snappiness), was suggested by Richard Stallman (yes, that Richard Stallman) and was adopted by the IEEE.
+
+	Alternation
+		- Allows match occur from among set of expressions.
+		- Is a type of ERE
+			royce@royce-PC MINGW64 ~/Documents/Dev/RoadToBE (master)
+				$ echo "rq" | grep r
+					rq
+			[me@linuxbox ~]$ echo "AAA" | grep -E 'AAA|BBB'
+					AAA
+			[me@linuxbox ~]$ echo "BBB" | grep -E 'AAA|BBB'
+					BBB
+			On the side note need to add -E since its extende feature (|).
+
+			$ grep -Eh '^(bz|gz|zip)' dirlist*.txt
+			[me@linuxbox ~]$ grep -Eh '^bz|gz|zip' dirlist*.txt
+
+				bzcat.exe*
+				bzcmp*
+				bzdiff*
+				bzegrep*
+				bzfgrep*
+				bzgrep*
+				bzip2.exe*
+				bzip2recover.exe*
+				bzless*
+				bzmore*
+				gzexe*
+				gzip.exe*
+				zipgrep*
+				zipinfo.exe*
+				bzcat.exe*
+				bzcmp*
+				bzdiff*
+				bzegrep*
+				bzfgrep*
+				bzgrep*
+				bzip2.exe*
+				bzip2recover.exe*
+				bzless*
+				bzmore*
+				gzexe*
+				gzip.exe*
+				zipgrep*
+				zipinfo.exe*
+
+
+
+
+
 https://www.unix.com/shell-programming-and-scripting/60266-how-find-out-home-directory-user.html
 https://l.facebook.com/l.php?u=https%3A%2F%2Faskubuntu.com%2Fquestions%2F382793%2Fwhats-is-the-difference-between-and-in-shell-command%3Ffbclid%3DIwAR2v_JJIrEGEgof9WqjiiFdOrEUoHL8XgUYbO00XflbX2obGih5RytbiCMw&h=AT1R-A8kWIeTUpKlUj6D5YzBeKk0aAnJv5VaGp7mIF_HPYTkKmOOdVMqKJewBkoXz1buts_C-VPbjoR2hkyKm1iFS_of79dA-XDYfzeTu783bDBJ5_QgZmWnuos6CZlQ&__tn__=H-R&c[0]=AT3GXsh-h099E55Jc3hdcmpVjxQU99TO6JOPMsjqPyDpfSZF65wXOYgy_3uu0tg0Op5hiGPrU2JfmgQvNTKfR8d5wUNziRCkRh2QgDhCUB7PtF8j4PSv7f8C1IaHyyLFgA7ImTML6dnnXBdgzIxUdQ
 https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
