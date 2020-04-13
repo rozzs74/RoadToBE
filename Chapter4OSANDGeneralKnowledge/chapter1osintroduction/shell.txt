@@ -628,10 +628,57 @@ Commmands
 
 		find - a command that find a certain file or directory thorught the system.
 
+	Archiving and back up 
+		- Ways to keep or copy contents from other device.
+		gzip – Compress or expand files
+	 	bzip2 – A block sorting file compressor
+		tar – Tape archiving utility
+ 		zip – Package and compress files
+		rsync – Remote file and directory synchronization
+
+		On a side note data compression is the process of removing redundancy from data.
+		Two compression alogrithims
+			Lossless - Nothing will loss. You get exactly what is compressed.
+			Lossy - Opposite of lossless, meaning close appxomiation what you compressed.
 
 
+		gzip - a command that compress one or more files. It replaces the original file with 
+			a compressed version.
+		gzip <file>
+		$ gzip haha.txt
+		royce@royce-PC MINGW64 ~/Documents/Dev
+		$ ls -l
+		-rw-r--r-- 1 royce 197121     90 Apr 13 11:47  haha.txt.gz
+		
+		gunzip - to uncrompressed file.
+		gunzip <file>
+		royce@royce-PC MINGW64 ~/Documents/Dev
+		$ gunzip haha.txt.gz
 
+		royce@royce-PC MINGW64 ~/Documents/Dev
+		$ ls -l
+		-rw-r--r-- 1 royce 197121    118 Apr 13 11:47  haha.txt
 
+		[me@linuxbox ~]$ gzip foo.txt
+		[me@linuxbox ~]$ gzip -tv foo.txt.gz
+		foo.txt.gz: OK
+
+		Alternatively, there is another command for unzip a file which is 
+		similar to gunzip. This is called zcat.
+
+		zcat <file>
+		royce@royce-PC MINGW64 ~/Documents/Dev
+		$ zcat haha.txt.gz
+		The quick brown fox jumped over the lazy dog. It was cool.
+		The quick brown fox jumped over the lazy dog. It was cool.
+
+		zcat haha.txt.gz | less
+
+		tar - a command that is for archiving files. In short tape archive.
+		tar cf sim.tar sim
+		tar tf sim.tar
+
+		
 https://www.unix.com/shell-programming-and-scripting/60266-how-find-out-home-directory-user.html
 https://l.facebook.com/l.php?u=https%3A%2F%2Faskubuntu.com%2Fquestions%2F382793%2Fwhats-is-the-difference-between-and-in-shell-command%3Ffbclid%3DIwAR2v_JJIrEGEgof9WqjiiFdOrEUoHL8XgUYbO00XflbX2obGih5RytbiCMw&h=AT1R-A8kWIeTUpKlUj6D5YzBeKk0aAnJv5VaGp7mIF_HPYTkKmOOdVMqKJewBkoXz1buts_C-VPbjoR2hkyKm1iFS_of79dA-XDYfzeTu783bDBJ5_QgZmWnuos6CZlQ&__tn__=H-R&c[0]=AT3GXsh-h099E55Jc3hdcmpVjxQU99TO6JOPMsjqPyDpfSZF65wXOYgy_3uu0tg0Op5hiGPrU2JfmgQvNTKfR8d5wUNziRCkRh2QgDhCUB7PtF8j4PSv7f8C1IaHyyLFgA7ImTML6dnnXBdgzIxUdQ
 https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
