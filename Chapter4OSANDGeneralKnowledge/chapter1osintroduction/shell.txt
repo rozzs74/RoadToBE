@@ -841,8 +841,91 @@ Commmands
 				zipgrep*
 				zipinfo.exe*
 
+	Quantifies 
+		- An ERE (Extended Regular Expressions) that specify the number of times element is matched.
+		- The usage of ? is an example of quantifiers
+			? Metacharacter - Means matching Zero Or One time
+				royce@royce-PC MINGW64 ~/Documents/Dev
+				$ echo "123 royce" | grep -E "?royce"
+				123 royce
+
+				royce@royce-PC MINGW64 ~/Documents/Dev
+				$ echo "123dbc" | grep -E "?a"
+				<No output doesnt match a on the given input>
+
+			* Metacharacter - Match an element zero or more times AKA wildcard meaning get everything
+			A pattern for sentence: [[:upper:]][[:upper:][:lower:] ]*\.
+
+			$ echo "The quick brown fox jump over the fence." | grep -E "[[:upper:]][[:upper:][:lower:] ]*\."
+			The quick brown fox jump over the fence.
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ echo "T a" | grep -E '[[:upper:]][[:lower:]]*'
+			T a
+
+			+ - Match an Element One or More Times
+			The + metacharacter works much like the *, except it requires at least one instance of the
+			preceding element to cause a match. 
+
+			
+			[me@linuxbox ~]$ echo "This that" | grep -E '^([[:alpha:]]+ ?)+$'
+			This that
+			[me@linuxbox ~]$ echo "a b c" | grep -E '^([[:alpha:]]+ ?)+$'
+			a b c
 
 
+			{ } - Match an Element a Specific Number of Times
+				The { and } metacharacters are used to express minimum and maximum numbers of required matches
+				{n} Match the preceding element if it occurs exactly n times.
+				{n,m} Match the preceding element if it occurs at least n times but no
+				more than m times.
+				{n,} Match the preceding element if it occurs n or more times.
+				{,m} Match the preceding element if it occurs no more than m times.
+
+
+		Lets make it work!
+		royce@royce-PC MINGW64 ~/Documents/Dev
+		$ for i in {1..10}; do echo $i; done
+			1
+			2
+			3
+			4
+			5
+			6
+			7
+			8
+			9
+			10
+
+		royce@royce-PC MINGW64 ~/Documents/Dev
+		$ echo ${RANDOM:0:3}
+		148
+
+		royce@royce-PC MINGW64 ~/Documents/Dev
+		$ for i in {1..10}; do echo "(${RANDOM:0:3}) ${RANDOM:0:3}-${RANDOM:0:4}" >> phonelist.txt; done
+
+		royce@royce-PC MINGW64 ~/Documents/Dev
+		$ cat phonelist.txt
+		(875) 646-4223
+		(195) 138-2706
+		(900) 279-3217
+		(208) 211-1020
+		(548) 186-753
+		(711) 270-2697
+		(196) 732-3056
+		(174) 110-2232
+		(294) 142-1250
+		(288) 187-1397
+
+		A command that finds ugly file names.
+			[me@linuxbox ~]$ find . -regex '.*[^-_./0-9a-zA-Z].*'
+		Searching a file with locate 
+			locate --regex 'bin/(bz|gz|zip)'
+		To active a regex expression using less command press / then enter the pattern.
+		less phonelist.txt
+
+		/^\([0-9]{3}\)
+		After it will highlight the text matching pattern.
 
 
 https://www.unix.com/shell-programming-and-scripting/60266-how-find-out-home-directory-user.html
@@ -855,3 +938,4 @@ https://www.computerhope.com/unix/uumask.htm
 https://en.wikipedia.org/wiki/Malware
 https://www.chiark.greenend.org.uk/~sgtatham/putty/
 http://tldp.org/LDP/nag2/index.html
+https://www.rexegg.com/regex-quantifiers.html#cheat_sheet
