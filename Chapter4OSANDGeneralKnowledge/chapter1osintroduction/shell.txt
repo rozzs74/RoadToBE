@@ -752,96 +752,96 @@ Commmands
 		[me@linuxbox ~]$ grep -h '^zip$' dirlist*.txt
 			zip
 
-	Bracket expressions and character classes
-		- Search a specified chracters using grep by bracket
-		$ grep -h '[bg]zip' dirlist*.txt
-			bzip2.exe*
-			bzip2recover.exe*
-			gzip.exe*
-			bzip2.exe*
-			bzip2recover.exe*
-			gzip.exe*
-	Negation using caret and bracket 
-
-	[me@linuxbox ~]$ grep -h '^[A-Z]' dirlist*.txt
-		MAKEDEV
-		ControlPanel
-		GET 
-
-	grep -h '^[A-Za-z0-9]' dirlist*.txt
-	grep -h '[A-Z]' dirlist*.txt
-	grep -h '[-AZ]' dirlist*.txt
-
-	Example of POSIX character class instead of regex
-		ls ~/Documents/dev/[A-Z]*
-		ls ~/Documents/[[:upper:]]* 
-		ls ~/Documents/[[:lower:]]* 
-	
-	BRE (Basic regular expressions)
-		^ $ . [ ] *
-	ERE (Extended regular expression)
-		( ) { } ? + |
-
-	POSIX
-		During the 1980’s, Unix became a very popular commercial operating system, but
-		by 1988, the Unix world was in turmoil. Many computer manufacturers had licensed the Unix source code from its creators, AT&T, and were supplying various
-		versions of the operating system with their systems. However, in their efforts to
-		create product differentiation, each manufacturer added proprietary changes and
-		extensions. This started to limit the compatibility of the software. As always with
-		proprietary vendors, each was trying to play a winning game of “lock-in” with
-		their customers. This dark time in the history of Unix is known today as “the
-		Balkanization.”
-		Enter the Institute of Electrical and Electronics Engineers (IEEE). In the mid1980s, the IEEE began developing a set of standards that would define how Unix
-		(and Unix-like) systems would perform. These standards, formally known as
-		IEEE 1003, define the application programming interfaces (APIs), shell and utilities that are to be found on a standard Unix-like system. The name POSIX, which
-		stands for Portable Operating System Interface (with the X added to the end for
-		extra snappiness), was suggested by Richard Stallman (yes, that Richard Stallman) and was adopted by the IEEE.
-
-	Alternation
-		- Allows match occur from among set of expressions.
-		- Is a type of ERE
-			royce@royce-PC MINGW64 ~/Documents/Dev/RoadToBE (master)
-				$ echo "rq" | grep r
-					rq
-			[me@linuxbox ~]$ echo "AAA" | grep -E 'AAA|BBB'
-					AAA
-			[me@linuxbox ~]$ echo "BBB" | grep -E 'AAA|BBB'
-					BBB
-			On the side note need to add -E since its extende feature (|).
-
-			$ grep -Eh '^(bz|gz|zip)' dirlist*.txt
-			[me@linuxbox ~]$ grep -Eh '^bz|gz|zip' dirlist*.txt
-
-				bzcat.exe*
-				bzcmp*
-				bzdiff*
-				bzegrep*
-				bzfgrep*
-				bzgrep*
+		Bracket expressions and character classes
+			- Search a specified chracters using grep by bracket
+			$ grep -h '[bg]zip' dirlist*.txt
 				bzip2.exe*
 				bzip2recover.exe*
-				bzless*
-				bzmore*
-				gzexe*
 				gzip.exe*
-				zipgrep*
-				zipinfo.exe*
-				bzcat.exe*
-				bzcmp*
-				bzdiff*
-				bzegrep*
-				bzfgrep*
-				bzgrep*
 				bzip2.exe*
 				bzip2recover.exe*
-				bzless*
-				bzmore*
-				gzexe*
 				gzip.exe*
-				zipgrep*
-				zipinfo.exe*
+		Negation using caret and bracket 
 
-	Quantifies 
+		[me@linuxbox ~]$ grep -h '^[A-Z]' dirlist*.txt
+			MAKEDEV
+			ControlPanel
+			GET 
+
+		grep -h '^[A-Za-z0-9]' dirlist*.txt
+		grep -h '[A-Z]' dirlist*.txt
+		grep -h '[-AZ]' dirlist*.txt
+
+		Example of POSIX character class instead of regex
+			ls ~/Documents/dev/[A-Z]*
+			ls ~/Documents/[[:upper:]]* 
+			ls ~/Documents/[[:lower:]]* 
+		
+		BRE (Basic regular expressions)
+			^ $ . [ ] *
+		ERE (Extended regular expression)
+			( ) { } ? + |
+
+		POSIX
+			During the 1980’s, Unix became a very popular commercial operating system, but
+			by 1988, the Unix world was in turmoil. Many computer manufacturers had licensed the Unix source code from its creators, AT&T, and were supplying various
+			versions of the operating system with their systems. However, in their efforts to
+			create product differentiation, each manufacturer added proprietary changes and
+			extensions. This started to limit the compatibility of the software. As always with
+			proprietary vendors, each was trying to play a winning game of “lock-in” with
+			their customers. This dark time in the history of Unix is known today as “the
+			Balkanization.”
+			Enter the Institute of Electrical and Electronics Engineers (IEEE). In the mid1980s, the IEEE began developing a set of standards that would define how Unix
+			(and Unix-like) systems would perform. These standards, formally known as
+			IEEE 1003, define the application programming interfaces (APIs), shell and utilities that are to be found on a standard Unix-like system. The name POSIX, which
+			stands for Portable Operating System Interface (with the X added to the end for
+			extra snappiness), was suggested by Richard Stallman (yes, that Richard Stallman) and was adopted by the IEEE.
+
+		Alternation
+			- Allows match occur from among set of expressions.
+			- Is a type of ERE
+				royce@royce-PC MINGW64 ~/Documents/Dev/RoadToBE (master)
+					$ echo "rq" | grep r
+						rq
+				[me@linuxbox ~]$ echo "AAA" | grep -E 'AAA|BBB'
+						AAA
+				[me@linuxbox ~]$ echo "BBB" | grep -E 'AAA|BBB'
+						BBB
+				On the side note need to add -E since its extende feature (|).
+
+				$ grep -Eh '^(bz|gz|zip)' dirlist*.txt
+				[me@linuxbox ~]$ grep -Eh '^bz|gz|zip' dirlist*.txt
+
+					bzcat.exe*
+					bzcmp*
+					bzdiff*
+					bzegrep*
+					bzfgrep*
+					bzgrep*
+					bzip2.exe*
+					bzip2recover.exe*
+					bzless*
+					bzmore*
+					gzexe*
+					gzip.exe*
+					zipgrep*
+					zipinfo.exe*
+					bzcat.exe*
+					bzcmp*
+					bzdiff*
+					bzegrep*
+					bzfgrep*
+					bzgrep*
+					bzip2.exe*
+					bzip2recover.exe*
+					bzless*
+					bzmore*
+					gzexe*
+					gzip.exe*
+					zipgrep*
+					zipinfo.exe*
+
+		Quantifies 
 		- An ERE (Extended Regular Expressions) that specify the number of times element is matched.
 		- The usage of ? is an example of quantifiers
 			? Metacharacter - Means matching Zero Or One time
@@ -927,6 +927,328 @@ Commmands
 		/^\([0-9]{3}\)
 		After it will highlight the text matching pattern.
 
+	Text processing
+		- In simple definition text processing is a practice of automation the 
+			creation of elecronic text.
+			Example of text process:
+				1. Search and Replace
+				2. Text formatting
+				3. Generate a processed report of the content 
+				4. Filter a file or report text file.
+
+		Set of commands that allows text processing under Unix systems
+			cat – Concatenate files and print on the standard output
+			sort – Sort lines of text files
+			uniq – Report or omit repeated lines
+			cut – Remove sections from each line of files
+			paste – Merge lines of files
+			join – Join lines of two files on a common field
+			comm – Compare two sorted files line by line
+			diff – Compare files line by line
+			patch – Apply a diff file to an original
+			tr – Translate or delete characters
+			sed – Stream editor for filtering and transforming text
+			aspell – Interactive spell checker
+
+		Application texts - Things relating on text processing.
+			1. Documents 
+			2. Web pages 
+			3. Email
+			4. Printer Output - Before documents turned into graphics it consists of texts.
+			5. Program Source Code
+		
+
+		cat 
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ cat > foo.txt
+					The quick brown fox jumped over the lazy dog.
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ cat -A foo.txt
+			^IThe quick brown fox jumped over the lazy dog.$
+			-A means to display the hiddent content just like ^I and $ above.
+			-n = An option to indicate the number line 
+			-s = suppresses multiple blank lines.
+
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ cat > foo.txt
+			The quick brown fox
+
+			
+
+
+			jumped over the lazy dog.
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ cat -ns foo.txt
+				1  The quick brown fox
+				2
+				3  jumped over the lazy dog.
+				4
+		sort
+			You can sort and cat text content
+				royce@royce-PC MINGW64 ~/Documents/Dev
+				$ sort > foo1.txt
+				c
+				b
+				a
+
+				royce@royce-PC MINGW64 ~/Documents/Dev
+				$ cat foo1.txt
+				a
+				b
+				c
+			Set of options under sort command:
+			Option 		Long Option		 			Description
+			-b 		  	--ignore-leading-blanks 	By default, sorting is performed on
+			-f 			--ignore-case				Make sorting case-insensitive.
+			-n			--numeric-sort				Perform sorting based on the numeric evaluation of a string. 
+			-r 			--reverse 					Sort in reverse order.
+			-k			--key=field1				Sort based in key
+			-m			--merge						Merge multiple files into single sorted result
+			-o			--output					Send sorted output to file rather than standard output.
+			-t 			--field-separator=char		Define the field-separator character. 
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ du -s /usr/share/* | head
+			8       /usr/share/applications
+			364     /usr/share/bash-completion
+			8       /usr/share/cygwin
+			1       /usr/share/fish
+			2       /usr/share/gdb
+			40      /usr/share/git
+			24      /usr/share/glib-2.0
+			13      /usr/share/gnupg
+			3       /usr/share/icons
+			137     /usr/share/licenses
+
+			with this command we use du to display disk space pipe with head to display first 10 lines
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ du -s /usr/share/* | sort -nr | head
+			30246   /usr/share/vim
+			12052   /usr/share/perl5
+			4852    /usr/share/misc
+			1200    /usr/share/pki
+			489     /usr/share/terminfo
+			368     /usr/share/bash-completion
+			220     /usr/share/mintty
+			145     /usr/share/nano
+			141     /usr/share/licenses
+			40      /usr/share/git
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ ls -l /usr/bin | sort -nrk 5 | head
+			-rwxr-xr-x 1 royce 197121 2561709 Feb 13  2018 msys-2.0.dll*
+			-rwxr-xr-x 1 royce 197121 2556653 Feb 13  2018 vimdiff.exe*
+			-rwxr-xr-x 1 royce 197121 2556653 Feb 13  2018 vim.exe*
+			-rwxr-xr-x 1 royce 197121 2556653 Feb 13  2018 view.exe*
+			-rwxr-xr-x 1 royce 197121 2556653 Feb 13  2018 rvim.exe*
+			-rwxr-xr-x 1 royce 197121 2556653 Feb 13  2018 rview.exe*
+			-rwxr-xr-x 1 royce 197121 2547712 Feb 13  2018 ex.exe*
+			-rwxr-xr-x 1 royce 197121 2097271 Feb 14  2018 sh.exe*
+			-rwxr-xr-x 1 royce 197121 2097271 Feb 14  2018 bash.exe*
+			-rwxr-xr-x 1 royce 197121 1900673 Feb 14  2018 msys-perl5_26.dll*
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ sort --key=1,1 --ke=2n distros.txt
+			Fedora 5 03/20/2006
+			Fedora 6 10/24/2006
+			Fedora 7 05/31/2007
+			Fedora 8 11/08/2007
+			Fedora 9 05/13/2008
+			Fedora 10 11/25/2008
+			SUSE 10.1 05/11/2006
+			SUSE 10.2 12/07/2006
+			SUSE 10.3 10/04/2007
+			SUSE 11.0 06/19/2008
+			Ubuntu 6.06 06/01/2006
+			Ubuntu 6.10 10/26/2006
+			Ubuntu 7.04 04/19/2007
+			Ubuntu 7.10 10/18/2007
+			Ubuntu 8.04 04/24/2008
+			Ubuntu 8.10 10/30/2008
+
+
+		uniq - The only task of uniq is to remove duplicate lines that are adjacent to each others.
+			It needs to associate this with sort command to make it work.
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ cat > foo2.txt
+			a
+			b
+			c
+			a
+			b
+			c
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ uniq foo2.txt
+			a
+			b
+			c
+			a
+			b
+			c
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ sort foo2.txt | uniq
+			a
+			b
+			c
+
+		cut - is a command that is used to extract section of text from line.
+
+			[me@linuxbox ~]$ cut -f 3 distros.txt
+				12/07/2006
+				11/25/2008
+				06/19/2008
+				04/24/2008
+				11/08/2007
+				10/04/2007
+				10/26/2006
+				05/31/2007
+				10/18/2007
+				04/19/2007
+				05/11/2006
+				10/24/2006
+				05/13/2008
+				06/01/2006
+				10/30/2008
+				03/20/2006
+
+		
+		paste - a command does the opposite of cut.
+		join -  similart to paste command. Then it adds column to file.
+
+	Comparing texts - Its useful a lot when you have comparison between text files.
+
+
+		comm - program that compares two text files.
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ cat > file1.txt
+			a
+			b
+			c
+			d
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ cat > file2.txt
+			b
+			c
+			d
+			e
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ comm file1.txt file2.txt
+			a
+							b
+							c
+							d
+					e
+			It creates three columns where value is unique.
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ comm -12 file1.txt file2.txt
+			b
+			c
+			d
+			-12 is to suppress the output of column 1 and column 2
+
+		diff - similar to command but used to detec the difference between files.
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ diff file1.txt file2.txt
+			1d0
+			< a
+			4a4
+			> e
+
+			Change 			Description
+			r1ar2 			Append the lines at the position r2 in the second file to the position r1 in the first file.
+			r1cr2 			Change (replace) the lines at position r1 with the lines at the position r2 in the second file.
+			r1dr2 			Delete the lines in the first file at position r1, which would have appeared at range r2 in the second file
+
+			-c to include context format of the difference.
+			- u means unified format
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ diff -c file1.txt file2.txt
+			*** file1.txt   2020-04-19 14:06:08.939440400 +0800
+			--- file2.txt   2020-04-19 14:06:16.730886000 +0800
+			***************
+			*** 1,4 ****
+			- a
+			b
+			c
+			d
+			--- 1,4 ----
+			b
+			c
+			d
+			+ e
+
+			Indicator 				Meaning
+			blank 					A line shown for context. It does not indicate a difference between the two files.
+			- 						A line deleted. This line will appear in the first file but not in thesecond file.
+			+ 						A line added. This line will appear in the second file but not in the first file.
+			! 						A line changed. The two versions of the line will be displayed, each in its respective section of the change group.
+
+			More unified format means duplicates are completely removed compare to context format.
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ diff -u file1.txt file2.txt
+			--- file1.txt   2020-04-19 14:06:08.939440400 +0800
+			+++ file2.txt   2020-04-19 14:06:16.730886000 +0800
+			@@ -1,4 +1,4 @@
+			-a
+			b
+			c
+			d
+			+e
+
+		patch - program used to apply changes to text files.
+
+
+	Editing on the Fly 
+
+
+		tr - program used to transliterate characters.
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ echo "lowercase letters" | tr a-z A-Z
+			LOWERCASE LETTERS
+
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ echo "lowerase letters" | tr [:lower:] A
+			AAAAAAAA AAAAAAA
+
+
+			ROT13 (Simple letter substitution ciper AKA encoding text)
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ echo "secret text" | tr a-zA-Z n-za-mN-ZA-M
+			frperg grkg
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ echo "frperg grkg" | tr a-zA-Z n-za-mN-ZA-M
+			secret text
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ echo "aaabbbccc" | tr -s ab
+			abccc
+
+			royce@royce-PC MINGW64 ~/Documents/Dev
+			$ echo "aaabbbccc" | tr -s abc
+			abc
+
+			-s - Removes duplication
+
+
+		sed - stands for stream editor.It performs text editing on a stream of text, either a set of specified files or standard input
+
+		royce@royce-PC MINGW64 ~/Documents/Dev
+		$ echo "front" | sed 's/front/back/'
+		back
+
+		aspell - a tool that allows to do interactive spelling checker.
+
 
 https://www.unix.com/shell-programming-and-scripting/60266-how-find-out-home-directory-user.html
 https://l.facebook.com/l.php?u=https%3A%2F%2Faskubuntu.com%2Fquestions%2F382793%2Fwhats-is-the-difference-between-and-in-shell-command%3Ffbclid%3DIwAR2v_JJIrEGEgof9WqjiiFdOrEUoHL8XgUYbO00XflbX2obGih5RytbiCMw&h=AT1R-A8kWIeTUpKlUj6D5YzBeKk0aAnJv5VaGp7mIF_HPYTkKmOOdVMqKJewBkoXz1buts_C-VPbjoR2hkyKm1iFS_of79dA-XDYfzeTu783bDBJ5_QgZmWnuos6CZlQ&__tn__=H-R&c[0]=AT3GXsh-h099E55Jc3hdcmpVjxQU99TO6JOPMsjqPyDpfSZF65wXOYgy_3uu0tg0Op5hiGPrU2JfmgQvNTKfR8d5wUNziRCkRh2QgDhCUB7PtF8j4PSv7f8C1IaHyyLFgA7ImTML6dnnXBdgzIxUdQ
@@ -939,3 +1261,6 @@ https://en.wikipedia.org/wiki/Malware
 https://www.chiark.greenend.org.uk/~sgtatham/putty/
 http://tldp.org/LDP/nag2/index.html
 https://www.rexegg.com/regex-quantifiers.html#cheat_sheet
+https://en.wikipedia.org/wiki/Text_processing
+https://en.wikipedia.org/wiki/ROT13
+https://rot13.com/
