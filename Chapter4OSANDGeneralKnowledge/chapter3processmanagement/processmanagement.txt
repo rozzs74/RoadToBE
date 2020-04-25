@@ -56,4 +56,13 @@ Memory allocation (Layout of a process in memory)
 		Different type of system call()
 			1) fork = process replication
 			2) spawb = create process
-			3) exec = executes process
+			3) exec = executes process 
+		Process termination 
+			- The process terminated using exit() system call.
+		
+		Android Process Hierarchy
+			Foreground process - Current process visible on the screen, current user interaction.
+			Visible process - a process not visible on foreground but performing activity that foreground process is referring to.
+			Service process - similar to background process but performing activity apparent to the user.
+			Background process - a process performing an activity but not visible to the user.
+			Empty process - a process that holds no active components associated in application.
