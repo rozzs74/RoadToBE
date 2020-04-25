@@ -1,0 +1,59 @@
+Date created: April 25, 2020
+
+
+Objectives: To have foundation and solid understanding about process management 
+	under computer systems.
+
+
+
+
+
+Processes
+	- Program can have complete control of the system and it's resources.
+	- Process allow multiple programs to be loaded into memory and executes it concurrently
+	- In simple and straight forward definition a process is the unit of work in modern computing system.
+	- Under processes we have user and os code execution. Example is system call.
+	- Term process and job are both significance through operation system
+	
+
+Memory allocation (Layout of a process in memory)
+	1) Stack
+	2) Heap
+	3) Data
+	4) Text
+
+	Heap section - memory that is dynamically allocated during program run time.
+	Stack section - temporary storage when invoking functions (such as function parameters, return addresses and local variables)
+
+	On a side note we do know that program itself its not a process, it's just passive entity file 
+		containing list of instructions stored in disk called executable fil.
+
+		Process states
+			1) New - The process is being created.
+			2) Running - Instructions are being executed.
+			3) Waiting - Waiting to receive an I/O event completion or signal.
+			4) Ready - The process is waiting to be assigned to a processor.
+			5) Terminated - The process has finished execution
+
+		PCB(Process Control Block) - Serves as repository of data needed how process allocated.
+			1) Process states - Can be found above ^
+			2) Program counter - indicates an address of instruction to execute
+			3) CPU registers - set of addresses
+			4) CPU-scheduling information - consists of information for process schedule
+			5) Memory-management information - containing memory information that relates to process
+			6) Accounting information - indicates the amount of CPU and real time used 
+
+		Threads 
+			- A process is program that performs a single thread execution.
+			- Example a word-processor program is running, a single thread of instructions are being executed.
+			- A single thread control allows the process to perform only one task at a time.
+			- Modern computers with multicore processor could performs multiple threads in parallel called multithreaded. 
+				Having this the PCB is expanded by inlcuding thread information.
+		
+		Process scheduling
+			- selects available process to be excute.
+		
+		Different type of system call()
+			1) fork = process replication
+			2) spawb = create process
+			3) exec = executes process
