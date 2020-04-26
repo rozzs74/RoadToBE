@@ -1,0 +1,80 @@
+Date created: April 26, 2020 2:48PM
+
+
+
+Objectives:
+Identify the basic components of a thread, and contrast threads and
+processes.
+    • Describe the major benefits and significant challenges of designing multithreaded processes.
+    • Illustrate different approaches to implicit threading, including thread pools,
+    fork-join, and Grand Central Dispatch.
+    • Describe how the Windows and Linux operating systems represent
+    threads.
+    • Design multithreaded applications using the Pthreads, Java, and Windows
+    threading APIs.
+
+
+Threads 
+    - basic unit of CPU utilization.
+    - comprises of thread ID, program counter, registers and stack
+    - traditional process has a single thread of control.
+    - If a process has multiple threads of control, it can perform more than one task at a time.
+    - Two types of thread 
+        a) Single-threaded process
+        b) Multithreaded process
+    - If a web server ran as single-threaded process, it will serve one client at time.
+        A client might wait a very long time for its request to be serviced.
+    - Process creation is time consuming and resource intensive. If the new process will perform same request why create it?
+    - One solution is to have server run as single process that accepts request.
+    - Generally acceptable to do one process that contains multiple threads.
+
+        client -> server -> thread
+        1) Client request 
+        2) Server create new thread to service request
+        3) Server resume listening for additional client requests
+    
+    - Benefits of multithreaded programming 
+        1) Responsiveness - allow programs to continue operation even part of it is blocked. Thereyby increasing resposiveness to the user.
+            Compare to single threaded it will be unresponsive because the process needs to finish first.
+        2) Resource sharing - we knew that processes like IPC can share resources by share memory and message passing. 
+                Programmers must create techniques and explicitly arranged to achieve this benefit.
+                By default thread already share the memory and resources of the process belongs.
+                The benefit of sharing code and data is that it allows an application to
+                have several different threads of activity within the same address space
+        3) Economoy - process creation allocates memory and resources which is costly.
+        4) Scalability - multithreaded is even greater in a multiprocessor architecture, where threads running in parallel 
+                in different processing cores.
+                A single-threaded process can run on only one processor, regardless how many are available. We explore this issue further in the following section.
+
+
+    - Programming Challenges
+        - Multicore systems is place to pressure application programmes to make better use of multiple computing cores.
+            1) Identifying tasks
+            2) Balance
+            3) Data splitting
+            4) Data dependency
+            5) Testing and debugging
+    - Types of Parallelism
+        1) Data Parallelism - Focuses on distrubuting subsets of the same data across multiple computing cores and performing the same operation.
+        2) Task Parallelism - involves distrubuting of task or threads across the cores instead of data. 
+            each thread is performing unique operation either same or different data.
+
+
+    - Multithreading models may refert to thread library. 
+        1) User threads -managed without kernel supports primary focus in code
+        2) Kernel threads - managed directly by the operating system.
+
+        A) Many to one model
+            - many user threads to one kernel threads advantegous for multi processing cores.
+        B) One to one model 
+            - One user to one kernel threads
+            - Provides more concurrency
+        C) Many to many model 
+            - run in parallel on a multiprocessor.
+            - Multiplexes
+            - Most flexible
+            - difficult to implement.
+    - Thread libraries
+
+https://medium.com/@bfortuner/python-multithreading-vs-multiprocessing-73072ce5600b
+https://medium.com/@urban_institute/using-multiprocessing-to-make-python-code-faster-23ea5ef996ba
