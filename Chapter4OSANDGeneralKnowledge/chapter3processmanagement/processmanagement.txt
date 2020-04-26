@@ -14,6 +14,7 @@ Processes
 	- In simple and straight forward definition a process is the unit of work in modern computing system.
 	- Under processes we have user and os code execution. Example is system call.
 	- Term process and job are both significance through operation system
+	- Each CPU core can run one process at a time.
 	
 
 Memory allocation (Layout of a process in memory)
@@ -66,3 +67,34 @@ Memory allocation (Layout of a process in memory)
 			Service process - similar to background process but performing activity apparent to the user.
 			Background process - a process performing an activity but not visible to the user.
 			Empty process - a process that holds no active components associated in application.
+
+		IPC (Interprocess Communication)
+			- Processes under operating system running concurrently
+			- Independent process - no data sharing.
+			- Cooperating process - shared data
+			- The ff are reasons allowing cooperating process
+				a) Information sharing - example is copy and paste
+				b) Computation speedup - to finish task quicker 
+				c) Modularity  - this have to separte process by dividing the behaviour.
+
+			- IPC requires the cooperating process means allowing to share data in between process.
+				by sending and receiving it.
+			- Two fundamental models of IPC
+				1) Shared memory 
+				2) Message passing
+			- Applied through messaging services 	
+			- inter-process communication or interprocess communication (IPC) refers specifically to the mechanisms an operating system provides to allow the processes to manage shared data. 
+				Typically, applications can use IPC, categorized as clients and servers, where the client requests data and the server responds to client requests.
+			- Pipes are one of IPC mechanisms under UNIX systems. But there are limitations
+				- Allowing bidirectional?
+				- half duplex or full duplex
+				- Relation parent and child process
+				- Are pipes can communicate over network?
+
+
+
+
+https://docs.python.org/3/library/asyncio.html:2!
+https://docs.python.org/3.8/library/ipc.html
+https://medium.com/js-imaginea/clustering-inter-process-communication-ipc-in-node-js-748f981214e9
+https://github.com/rozzs74/node-js-right-way-jim/tree/master/chapter4robustmessagingservices
