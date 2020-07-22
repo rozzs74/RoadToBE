@@ -66,7 +66,7 @@ Internet
             e.) 16-bit urgent pointer
             f.) options
             g.) data
-    - Well know port numbers
+    - Well known port numbers
         a.) FTP - 20/21
         b.) Telnet - 23
         c.) SMTP - 25
