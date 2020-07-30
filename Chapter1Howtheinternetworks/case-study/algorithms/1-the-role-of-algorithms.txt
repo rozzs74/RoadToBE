@@ -1,0 +1,21 @@
+algorithm 
+ - takes input to process an output
+ - sequence of computational steps that tarnsform input to output
+ - is tool for solving computational-problems
+ - instance is called as an input and should consider the constrains imposed in the problem statement which neede to solve the computational-problem.
+ - an algorithm is CORRECT if input compute correct output.
+ - the actual requirement in algorithm is the procedure that computational problem followed.
+ - sample problems that algorithm can solve
+    1.) Human Genome Project
+         - without algorithm this project cannot identify 100,000 genes in human DNA, a 3 billion chemical base.
+         - The savings are in time, both human and machine, and in money, as more informa- tion can be extracted from laboratory techniques.
+    2.) Internet
+        - without algorithms people today cannot retrieve huge amounts of information.
+        - routes 
+    3) Electronic commerce
+        - without algorithms we cannot change goods electronically depending if private or public holding data. The core techologie is public-key
+            cryptography and digital signatures are based in numerical algorithms and number theory.
+
+    4) Manufacturing and other commercial enterprices
+        - without algorithms oil, politician voites, air flights, isp speed are nothing. With the help of linear programming we solve the problem.
+ - have many candidate solutions. it can be none or finding the best.
