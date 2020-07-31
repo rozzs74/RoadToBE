@@ -1,4 +1,4 @@
-`algorithm 
+algorithm 
  - takes input to process an output
  - sequence of computational steps that tarnsform input to output
  - is tool for solving computational-problems
@@ -54,4 +54,9 @@ Exercises
         e) time and space complexity is absolute prediction because the end of execution is based in the number of items
     - Array weakness
         a) Not friendly when traversing large items
-    - How are the shortest-path and traveling-salesman problems given above similar? How are they different?
+4.) How are the shortest-path and traveling-salesman problems given above similar? How are they different?
+    -  Because this two problem is an NP-problem.
+5.) Come up with a real-world problem in which only the best solution will do. Then come up with one in which a solution that is “approximately” the best is good enough
+    - Right now were are facing pandemic (covid-19). I want to utilise technology to prevent the virus spread across people. 
+    - First solution is notify people, whenever they are near to a positive in virus. Using map were are able to determine it's current location.
+    - Second solution is image processing to determine if the person wearing a face/shield mask.
