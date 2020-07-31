@@ -1,4 +1,4 @@
-algorithm 
+`algorithm 
  - takes input to process an output
  - sequence of computational steps that tarnsform input to output
  - is tool for solving computational-problems
@@ -32,3 +32,26 @@ hard problem
     - Example problem is travelling salesman problem
         https://en.wikipedia.org/wiki/Travelling_salesman_problem
         https://www.wired.com/2013/01/traveling-salesman-problem/
+parallelism
+    -  over clocking cpu would melt the chips, but with the help of algorithm we can take advantage the multiple cores to process using multi-threaded
+
+Exercises
+1.) Give a real-world example that requires sorting or a real-world example that re- quires computing a convex hull.
+    - Data analysis, let say were monitoring prediction over calendar. Sort is best fit when checking past month calendar period. This will be the basis 
+       of the current or future events.
+    - months = ["June 2020", "July 2020", "April 2020"] ==> ["April 2020", "June 2020", "July 2020"]
+
+2.) Other than speed, what other measures of efficiency might one use in a real-world setting?
+    - Of course we need to consider implementation, constraints. Achieve easy solution compare to complex solution, we know there are a lot of candidate solution.
+
+3.) Select a data structure that you have seen previously, and discuss its strengths and limitations.
+    - I would choose array because of the common operations of data structure is easy to do deal with it like
+        a) Traverse small collections
+        b) Search, with the help of index
+        c) Add
+        b) Remove
+        d) Update
+        e) time and space complexity is absolute prediction because the end of execution is based in the number of items
+    - Array weakness
+        a) Not friendly when traversing large items
+    - How are the shortest-path and traveling-salesman problems given above similar? How are they different?
