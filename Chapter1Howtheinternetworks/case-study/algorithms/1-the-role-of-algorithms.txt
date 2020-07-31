@@ -19,3 +19,16 @@ algorithm
     4) Manufacturing and other commercial enterprices
         - without algorithms oil, politician voites, air flights, isp speed are nothing. With the help of linear programming we solve the problem.
  - have many candidate solutions. it can be none or finding the best.
+
+data structure 
+    - a way to store and organize data to accept access and modification. Important to strengthen the limitations.
+
+technique
+    - many techniques available to solve the computational-problem
+
+hard problem
+    - speed is important in regards to algorithm, that is the only way if the algorithm efficient. like how long an algorithm takes procedure its result.
+    - a NP-problem is solve by approximation algorithm
+    - Example problem is travelling salesman problem
+        https://en.wikipedia.org/wiki/Travelling_salesman_problem
+        https://www.wired.com/2013/01/traveling-salesman-problem/
