@@ -69,3 +69,24 @@ algorithm as technology
     A.) Efficiency 
 		1.) Insertion sort takes time roughly c1n2 to sort n items. (https://www.geeksforgeeks.org/insertion-sort/, https://www.tutorialspoint.com/data_structures_algorithms/insertion_sort_algorithm.htm)
 		2.) Merge sort takes time roughly c2nlogN to sort n items. (https://www.tutorialspoint.com/data_structures_algorithms/merge_sort_algorithm.htm)
+algorithms and other techonologies
+	- Consider algoritms like computer hard-ware, as technology.
+	- System performance depends on choosing efficient algorithm as much choosing fast hardware.
+	- Hardware considerations
+		a. advanced computer architectures and fabrication techonologies
+		b. easy-to-use, intuitive, GUI
+		c. object-oriented systems
+		d. integrated web techonologies
+		e. fast networking, both wired and wireless.
+	- Hardware and application questions about algorithm
+		Does the application rely on fast hardware?
+			- The hardware design used algorithms.
+		Does the application rely on graphical user interfaces?
+			- The design of any GUI relies on algorithms
+		Does the application rely on networking?
+			- Routing in networks relies heavily on algorithms
+		Was the application written in a language other than machine code?
+			- Then it was processed by a compiler, interpreter, or assembler, all of which make extensive use of algorithms.
+	- Having a solid base of algorithmic knowledge and technique is one characteristic that separates the truly skilled programmers from the novices. 
+		With modern computing technology, you can accomplish some tasks without knowing much about algorithms (search in the internet), 
+		but with a good background in algorithms, you can do much, much more.
