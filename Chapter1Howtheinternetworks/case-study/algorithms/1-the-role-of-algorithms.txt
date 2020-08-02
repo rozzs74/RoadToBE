@@ -66,5 +66,6 @@ algorithm as technology
     - as programmer we should use computer resources wisely as most of it is not available. Example memory, must us to assign variables correctly.
     - algorithm is efficient when time and space is not big.
     - implementation should be bound in software engineering practice this is well designed and documented.
-    A.) Efficiency
-		- 
+    A.) Efficiency 
+		1.) Insertion sort takes time roughly c1n2 to sort n items. (https://www.geeksforgeeks.org/insertion-sort/, https://www.tutorialspoint.com/data_structures_algorithms/insertion_sort_algorithm.htm)
+		2.) Merge sort takes time roughly c2nlogN to sort n items. (https://www.tutorialspoint.com/data_structures_algorithms/merge_sort_algorithm.htm)
