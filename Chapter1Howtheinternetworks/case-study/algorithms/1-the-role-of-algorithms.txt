@@ -60,3 +60,9 @@ Exercises
     - Right now were are facing pandemic (covid-19). I want to utilise technology to prevent the virus spread across people. 
     - First solution is notify people, whenever they are near to a positive in virus. Using map were are able to determine it's current location.
     - Second solution is image processing to determine if the person wearing a face/shield mask.
+
+
+algorithm as technology
+    - as programmer we should use computer resources wisely as most of it is not available. Example memory, must us to assign variables correctly.
+    - algorithm is efficient when time and space is not big.
+    1) Efficiency - 
