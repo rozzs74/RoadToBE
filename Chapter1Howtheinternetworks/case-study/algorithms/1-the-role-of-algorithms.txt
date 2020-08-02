@@ -65,4 +65,6 @@ Exercises
 algorithm as technology
     - as programmer we should use computer resources wisely as most of it is not available. Example memory, must us to assign variables correctly.
     - algorithm is efficient when time and space is not big.
-    1) Efficiency - 
+    - implementation should be bound in software engineering practice this is well designed and documented.
+    A.) Efficiency
+		- 
