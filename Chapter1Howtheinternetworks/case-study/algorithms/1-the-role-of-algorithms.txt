@@ -90,3 +90,35 @@ algorithms and other techonologies
 	- Having a solid base of algorithmic knowledge and technique is one characteristic that separates the truly skilled programmers from the novices. 
 		With modern computing technology, you can accomplish some tasks without knowing much about algorithms (search in the internet), 
 		but with a good background in algorithms, you can do much, much more.
+Exercises
+1.) Give an example of an application that requires algorithmic content at the application level, and discuss the function of the algorithms involved.
+	- Traverse directory or known as walk folder, basically the computational problem is how to get the files inside directory? Consider many folder inside the root folder.
+		I have created a function that accept two inputs, first is the root directory the second is callback that says I found something. The algorithm used to 
+		solve the problem is recursive algorithm.
+		Actual code
+		export const walkFolder: Function = (dir: string, callbacks?: any) => {
+			let results: any = [];
+			let path = getPathInstance();
+			fs.readdir(dir, ((error: any, list: any) => {
+				if (error) callbacks(error);
+				let pending_files = list.length;
+				if (pending_files === 0) callbacks('empty');
+				list.forEach(async (file: any) => {
+					file = path.resolve(dir, file);
+					fs.stat(file, ((err: any, stat: any) => {
+						if (stat && stat.isDirectory()) {
+							walkFolder(file, (error: any, result: any) => {
+								results = results.concat(result);
+								if (!--pending_files) callbacks(null, results);
+							});
+							results.push(file);
+						} else {
+							results.push(file);
+							if (!--pending_files) callbacks(null, results);
+						}
+					}));
+				});
+			}));
+		};
+
+2.) Suppose we are comparing implementations of insertion sort and merge sort on the same machine. For inputs of size n, insertion sort runs in 8n2 steps, while merge sort runs in 64n lg n steps. For which values of n does insertion sort beat merge sort?
