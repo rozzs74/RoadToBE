@@ -1,0 +1,8 @@
+https://mathbitsnotebook.com/Algebra2/Exponential/EXLogarithms.html#:~:text=A%20logarithm%20is%20an%20exponent.&text=A%20logarithm%20base%20b%20of,be%20raised%20to%20get%20x.
+
+
+
+ A logarithm base b of a positive number x is such that:
+for b > 0, b≠ 1, logb x = y if and only if by = x.
+The log bx is read "log base b of x".
+The logarithm y is the exponent to which b must be raised to get x

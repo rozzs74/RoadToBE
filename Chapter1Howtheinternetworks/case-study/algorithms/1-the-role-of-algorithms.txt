@@ -122,3 +122,10 @@ Exercises
 		};
 
 2.) Suppose we are comparing implementations of insertion sort and merge sort on the same machine. For inputs of size n, insertion sort runs in 8n2 steps, while merge sort runs in 64n lg n steps. For which values of n does insertion sort beat merge sort?
+    n = 2
+    while 2 ** (n / 8.0) < n:
+        n += 1
+    print(f"Maximum value of n for which insertion sort beats merge sort is {n - 1}")
+    https://atekihcan.github.io/CLRS/E01.02-02/
+
+3.) 
