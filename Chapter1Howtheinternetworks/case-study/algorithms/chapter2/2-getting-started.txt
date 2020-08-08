@@ -1,4 +1,5 @@
 Insertion sort
+    - has an average and worst-case running time of O(n^2)O(n2), so in most cases, a faster algorithm is more desirable.
 	- solves sorting problem
 	- With the ff
 		1) Input: sequence of n numbers (a1,a2...an)
@@ -60,3 +61,5 @@ Initialization: Before the first loop iteration (i = 1i=1), the subarray is the 
 Maintenance: During each loop iteration, we compare vv with A[i]A[i]. If they are the same, we return ii, which is the correct result. Otherwise, we continue to the next iteration of the loop. At the end of each loop iteration, we know the subarray A[1..i]A[1..i] does not contain vv, so the loop invariant holds true. Incrementing ii for the next iteration of the for loop then preserves the loop invariant.
 
 Termination: The loop terminates when i > A.length = ni>A.length=n. Since ii increases by 11, we must have i = n + 1i=n+1 at that time. Substituting n + 1n+1, for ii in the wording of the loop invariant, we have that the subarray A[1..n]A[1..n] consists of elements that are different than vv. Thus, we return \text{NIL}NIL. Observing that A[1..n]A[1..n], we conclude that the entire array does not have any element equal to vv. Hence the algorithm is correct.
+
+https://brilliant.org/wiki/insertion/
