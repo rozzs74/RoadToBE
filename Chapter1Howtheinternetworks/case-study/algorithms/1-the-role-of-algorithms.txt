@@ -128,4 +128,8 @@ Exercises
     print(f"Maximum value of n for which insertion sort beats merge sort is {n - 1}")
     https://atekihcan.github.io/CLRS/E01.02-02/
 
-3.) 
+3.)  For each function f .n/ and time t in the following table, determine the largest size n of a problem that can be solved in time t, assuming that the algorithm to solve the problem takes f .n/ microseconds.
+
+    https://www.chegg.com/homework-help/introduction-to-algorithms-2nd-edition-chapter-1.p-solutions-9780070131514
+
+    https://ita.skanev.com/01/problems/01.html
