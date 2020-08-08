@@ -1,0 +1,20 @@
+Insertion sort
+	- solves sorting problem
+	- With the ff
+		1) Input: sequence of n numbers (a1,a2...an)
+		2) Output: permutation ordering of the input sequence such that a1 <= a2 <= ..... <= an
+	- the numbers we wish to sort is called keys
+	- pseudocode employs expressive method clear and cocise to specify a given algorithm. The cleares method here is
+		english
+	- this type of sort usually a hand of playing cards.
+	- this type of algorithm is efficient when sorting small numbers of elements
+	- actual inputs for the insertion algorithm is containing the sequence of numbers and its length.
+		[A.......1] A.length
+	- What it really does?
+		a) sorts input numbers in place.
+		b) rearranges the numbers within array
+		c) most constant numbers are stored outside array any time
+		d) the input array contains the sorted output sequence when the insertion-sort produce finished	
+    - Three categories for loop variations when working insertion sort
+        a) Initialization
+        b)
