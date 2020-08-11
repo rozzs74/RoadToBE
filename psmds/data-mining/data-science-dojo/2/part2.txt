@@ -1,0 +1,38 @@
+Attribute Values
+    - An attribute holds a Values
+    - The same attribute can be mapped to different values  (Same attribute mapped to different values)
+        example
+            a) height can be measured in "feet" or "meters".
+    - Different attributes can be mapped to the same set of values (Same values mapped to different attributes)
+        example
+            a) Attribute values for ID and age are integers.
+
+Attribute Classification
+    - Discrete attributes
+        a) Finite (limited size) or countably infinite set of values
+        b) Often represented as integer variables or characters
+            example:
+                - integers
+                - zip codes, click counts, set of words, collection of documents, gender
+                - binary attributes such (1, 0) are special case of discrete values. It can be YES or NO, DEAD or ALIVE, 
+                    one and zero
+        c) For visualization discrete attributes, mostly frequently histograms (graph with a bar) are used. Because they represent relative frequencies of attribute values.
+                thus, histogram is actually a probability distribution of attribute values.
+    - Continuous attributes
+        a) Has real numbers are attribute of value, such no limitation on the value itself. Theoretically can hold different value at all.
+        b) Typically represented as floaing-point variables (decimals).
+        c) Come from infinite set
+            example:
+                - temperature
+                - height
+                - weight
+
+
+Continuous vs Discrete attributes
+
+
+Reference
+http://www.differencebetween.net/science/mathematics-statistics/difference-between-real-numbers-and-integers/
+https://stackoverflow.com/questions/1779622/continuous-vs-discrete-attributes
+https://www.sciencedirect.com/topics/computer-science/discrete-attribute
+https://en.wikipedia.org/wiki/Histogram
