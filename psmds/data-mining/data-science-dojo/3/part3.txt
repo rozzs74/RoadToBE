@@ -1,0 +1,19 @@
+Attribute Classification
+Important of attribute classes
+	- Categorical Attributes (Descrite attributes) - means finite state of values typically, any data attribute which is categorical in nature represents discrete values which belong to a specific finite set of categories or classes. 
+		1) Nominal - not concept of ordering among the values of that attribute.
+			- Examples
+				ID numbers, eye color, zip codes, movie, music, video games genres, country names, weather
+		2) Ordinal - ordered
+			- Examples
+				Rankings, place in competition, grades, clothing sizes(XL, L, M, S XS), shoe sizes, education level, employment roles
+	- Feature engineering on categorical data
+		
+	- Interval attributes - is a constant value with different attributes
+			- Example
+				temperatures in Celius or Fahrenheit
+	- Ratio attributes -
+			- Example 
+				Temperature in kelvin, length, time, counts
+
+https://towardsdatascience.com/understanding-feature-engineering-part-2-categorical-data-f54324193e63#:~:text=Typically%2C%20any%20data%20attribute%20which,popularly%20known%20as%20response%20variables).
