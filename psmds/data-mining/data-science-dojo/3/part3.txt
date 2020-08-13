@@ -2,12 +2,15 @@ Attribute Classification
 Important of attribute classes
 	- Categorical Attributes (Descrite attributes) 
 		- means finite state of values typically, any data attribute which is categorical in nature represents discrete values which belong to a specific finite set of categories or classes. 
-		- An attribute where the values correspond to discrete categories. For example, state is a categorical attribute with discrete values (CA, NY, MA, etc.). Categorical attributes are either non-ordered (nominal) like state, gender, etc., or ordered (ordinal) such as high, medium, or low temperatures.
+		- An attribute where the values correspond to discrete categories. For example, state is a categorical attribute with discrete values (CA, NY, MA, etc.). 
+        - Categorical attributes are either non-ordered (nominal) like state, gender, etc., or ordered (ordinal) such as high, medium, or low temperatures.
 		- Feature engineering on categorical data
 		- Bar plot and pie chart is used to visualize categorical data.
 		- Types of categorical attributes:
-			1) Nominal - A nominal scale describes a variable with categories that do not have a natural order or ranking. with numbers if you want, but the order is arbitrary and any calculations, such as computing a mean, median, or standard deviation, would be meaningless.
+			1) Nominal - A nominal scale describes a variable with categories that do not have a natural order or ranking. 
+                    with numbers if you want, but the order is arbitrary and any calculations, such as computing a mean, median, or standard deviation, would be meaningless.
 				- nominal is qualitative data
+                - providing name
                 - A nominal scale describes a variable with categories that do not have a natural order or ranking
                 - Examples
 					ID numbers, eye color, zip codes, movie, music, video games genres, country names, weather, geno type, blood type
@@ -43,7 +46,7 @@ Important of attribute classes
             Year of your birth = Interval, its constant
             Egg size (small, medium, large, extra large, jumbo) = Ordinal, its ordered
             Military rank = Ordinal, its ordered
-            Number of children in a family = Ratio
+            Number of children in a family = Ratio, can be zero meaning no children.
             Jersey numbers for a football team = Nominal, no order
             Shoe size = Interval, constant
         -  Quantitative (Numerical) vs Qualitative (Categorical)

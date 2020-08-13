@@ -21,7 +21,7 @@ Attribute Classification
         d) Discrete variables can take on either a finite number of values, or an infinite, but countable number of values. 
             The number of patients that have a reduced tumor size in response to a treatment is an example of a discrete random variable that can take on a finite number of values. 
             The number of car accidents at an intersection is an example of a discrete random variable that can take on a countable infinite number of values (there is no fixed upper limit to the count).
-        e) To model your data use Binomial and Poisson
+        e) To model your data use "Binomial" and "Poisson"
     - Continuous attributes
         a) Has real numbers are attribute of value, such no limitation on the value itself. Theoretically can hold different value at all.
         b) Typically represented as floaing-point variables (decimals).
@@ -30,7 +30,10 @@ Attribute Classification
                 - temperature
                 - height
                 - weight
-        d) Continuous variables can take on infinitely many values, such as blood pressure or body temperature. Even though the actual measurements might be rounded to the nearest whole number, in theory, there is some exact body temperature going out many decimal places That is what makes variables such as blood pressure and body temperature continuous. 
+        d) Continuous variables can take on infinitely many values, such as blood pressure or body temperature. 
+            Even though the actual measurements might be rounded to the nearest whole number, in theory, 
+            there is some exact body temperature going out many decimal places 
+            That is what makes variables such as blood pressure and body temperature continuous. 
         e) To model your data use Gaussian and Lognormal.
     - Test your understanding of Discrete vs Continuous
         Number of emergency room patients - Discrete
@@ -49,9 +52,18 @@ https://www.sciencedirect.com/topics/computer-science/discrete-attribute
 https://en.wikipedia.org/wiki/Histogram
 https://www.mathsisfun.com/definitions/discrete-data.html
 https://www.mathsisfun.com/definitions/continuous-data.html
+https://www.mathsisfun.com/numbers/real-numbers.html
 https://www.graphpad.com/guides/prism/8/statistics/stat_what_are_binomial_variables.htm
 https://www.graphpad.com/guides/prism/8/curve-fitting/reg_poisson-regression.htm
 https://www.graphpad.com/guides/prism/8/statistics/importance_of_the_gaussian_distribution.htm
 https://www.graphpad.com/guides/prism/8/statistics/stat_the_lognormal_distribution.htm
 https://www.graphpad.com/support/faq/what-is-the-difference-between-ordinal-interval-and-ratio-variables-why-should-i-care/
 https://www.youtube.com/watch?v=LPHYPXBK_ks
+
+https://en.wikipedia.org/wiki/Binomial_distribution
+https://brilliant.org/wiki/poisson-distribution/#:~:text=The%20Poisson%20distribution%20is%20the,the%20drive%2Dthrough%20per%20minute.
+https://www.mathsisfun.com/data/standard-normal-distribution.html
+https://brilliant.org/wiki/log-normal-distribution/
+https://brilliant.org/wiki/normal-distribution/
+https://brilliant.org/wiki/binomial-distribution/
+https://stattrek.com/probability/set-and-subset.aspx
