@@ -1,0 +1,2 @@
+Data Quality
+	- very important when it comes to decision is having a data quality. 

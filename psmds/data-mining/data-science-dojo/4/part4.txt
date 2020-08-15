@@ -25,11 +25,15 @@ Types of Data sets or Data sets classification
 					- consider a grocery store. The set of products purchased by a customer 
 						during one shopping trip constitutes a transaction while the individual products
 						that were purchased are the items.
-				- Graph Data
-					- example: Generic graph and HTML links
-					- consists of vertices and nodes 
-					- a web page is an example of graph data
-				- Ordered Data
-					- Genomic sequence data
-					- Spatial-Temporal data 
-						- Average monthly temperature of land and ocean
+		2) Graph Data	
+			- world wide web
+			- molecular structures
+			- example: Generic graph and HTML links
+			- consists of vertices and nodes 
+			- a web page is an example of graph data
+		3) Ordered Data
+			- Sequential data
+			- Generic Sequence data
+			- Genomic sequence data
+			- Spatial-Temporal data 
+				- Average monthly temperature of land and ocean
