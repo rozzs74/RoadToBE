@@ -1,2 +1,12 @@
 Data Quality
-	- very important when it comes to decision is having a data quality. 
+	- very important when it comes to decision is having a data quality. By asking where the 
+		problem is coming from.
+	- most commonly looked by data scientist 
+	- Three fundamental questions in data quality
+		1) What problems should we worry about?
+		2) How can we detect problems with the data?
+		3) What can we do about these problems?
+	- Examples of data quality problems (that shows up in production all the time):
+		- Noise and outliers
+		- Missing values 
+		- Duplicate data
