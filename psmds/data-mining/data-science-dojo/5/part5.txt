@@ -25,4 +25,15 @@ Outliers
 		of the other data objects in data sets.
 	- is data point that differs significantly from other observations.
 	- the data is valid values and properly collected and clean but "ITS outside of the normal range"
-	
+
+Missing Values 
+	- Reasons for missing values 
+		1) Information is not collected 
+			- (e.g., people decline to give their age and weight)
+		2) Attributes may not applicable to all cases
+			- (e.g., annual income is not applicable to children)
+	- Handling missing values 
+		1) Eliminate Data Objects
+		2) Estimate Missing Values
+		3) Ignore the missing values during analysis
+		4) Replcate with all possible values (weighted by their probabilities)
