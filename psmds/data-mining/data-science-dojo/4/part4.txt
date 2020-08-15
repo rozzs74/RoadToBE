@@ -75,3 +75,6 @@ Types of Data sets or Data sets classification
 					- Some objects have spatial attributes, such as positions or areas, as well as other types of attributes. An example of spatial 
 						 data is weather data (precipitation, temperature, pressure) that is collected for a variety of geographical locations.
 				- Average monthly temperature of land and ocean
+
+
+https://towardsdatascience.com/types-of-data-sets-in-data-science-data-mining-machine-learning-eb47c80af7a
