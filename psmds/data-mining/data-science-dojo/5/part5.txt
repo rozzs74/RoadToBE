@@ -10,3 +10,19 @@ Data Quality
 		- Noise and outliers
 		- Missing values 
 		- Duplicate data
+Noise
+	- An invalid signal overlapping valid data
+	- Data has inaccurate values
+	- Examples
+		1) Distortion of a person's voice over the phone.
+		2) Snow on a television screen
+		3) Human inconsistency in labeling, example is in sport judging the performance
+	- invalid data pointes that obscuring the signals
+	- determing the attributes which are noisy
+
+Outliers
+	- Data objects with characteristics that are considerably different than most 
+		of the other data objects in data sets.
+	- is data point that differs significantly from other observations.
+	- the data is valid values and properly collected and clean but "ITS outside of the normal range"
+	
