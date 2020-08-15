@@ -37,3 +37,9 @@ Missing Values
 		2) Estimate Missing Values
 		3) Ignore the missing values during analysis
 		4) Replcate with all possible values (weighted by their probabilities)
+Duplicate Data 
+	- Data set may include data objects that are duplicates, or almost duplicates
+		of one another 
+	- Major issue when merging data from heterogeneous sources
+	- Example
+		Same person with multiple email addresses
