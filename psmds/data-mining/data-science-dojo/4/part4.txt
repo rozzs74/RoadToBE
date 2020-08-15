@@ -1,9 +1,26 @@
 Types of Data sets or Data sets classification
     - data sets are required in data analysis
+	- Three general characteristics of data sets namely:
+		1) Dimensionality
+			- is the number of attributes that the objects in the data set have.
+			- if high number of attributes or high dimensionality, then it can be 
+				more difficult to analyse such a data set known as Curse of Dimensionality.
+			- Curse of dimensionality
+				-  Specifically, as dimensionality increases, the data becomes increasingly sparse in the space that it occupies.
+		2) Sparsity
+			- most attributes of an object have values of 0, in many case fewer than 
+				1% of the entries are non-zero.
+		3) Resolution
+			- patterns are importan in knowing the level of resolution, 
+				for example if the resolution is fine, the pattern is not visible and 
+				buried in noise
+			- Example is variations in atmospheric pressure on scale of hours, on a scale of months 
+            such phenomena not detectable.
 	- Three different kinds of data sets 
 		1) Record data 
 			- that consists of a collection of records, each of which consists
-					of a "fixed set of attributes".
+					of a "fixed set of attributes".	
+			- usually stored either in flat files or in relational databases.
 			- consist of categorigal attributes like 
 				a) Ordinal
 				b) Nominal
@@ -14,7 +31,7 @@ Types of Data sets or Data sets classification
 						and n columns, one for each attributes
 					- the data objets can be thought of as points in a multi-dimensional space,
 						where each dimension represents a distinct attribute.
-				- Document Data
+				- Document Data or so called sparse data matrix or document-data-matrix
 					- each document becomes a "term" vector
 					- each term is a component (attribute) of the vector
 					- the value of each component is the number (discrete attribute) of times
@@ -26,14 +43,35 @@ Types of Data sets or Data sets classification
 						during one shopping trip constitutes a transaction while the individual products
 						that were purchased are the items.
 		2) Graph Data	
+			- Types 
+				1) Data with relationships among Objects: 
+					- the data objects are mapped to nodes of the graph, while the 
+					  relationships among objects are captured by the links between objects
+					  and link properties
+				2) Data with objects that are graphs
+					- if objects have structure that contain object sub objects that have
+						relationship, and frequently represented as graphs. Example is chemical compound
+						can be represented by a graph, where the nodes are atoms and the links between nodes are chemical bonds.
 			- world wide web
 			- molecular structures
 			- example: Generic graph and HTML links
 			- consists of vertices and nodes 
 			- a web page is an example of graph data
 		3) Ordered Data
-			- Sequential data
-			- Generic Sequence data
-			- Genomic sequence data
-			- Spatial-Temporal data 
+			Four types of data 
+				1) Sequential data (with timestamps)
+					- also referred to as "temporal" data, 
+					  can be thoughts of as an extension of record data, 
+					  where each record has a time associated with it. Consider a retail transaction data set that also stores the time at which the transaction took place
+			 	2) Sequence data (without timestamps)
+				 	- Sequence data consists of a data set that is a sequence of individual entities, such as a sequence of words or letters. 
+					  It is quite similar to sequential data, except that there are no time stamps; 
+					  instead, there are positions in an ordered sequence.Example of this is genetic 
+					  	information of plants
+				3) Time series data 
+					- Time series data is a special type of sequential data in which each record is a time series, i.e., a series of measurements taken over time. For example, 
+					  a financial data set might contain objects that are time series of the daily prices of various stocks.
+				4) Spatial data 
+					- Some objects have spatial attributes, such as positions or areas, as well as other types of attributes. An example of spatial 
+						 data is weather data (precipitation, temperature, pressure) that is collected for a variety of geographical locations.
 				- Average monthly temperature of land and ocean
