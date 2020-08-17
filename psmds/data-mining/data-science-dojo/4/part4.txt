@@ -1,6 +1,8 @@
 Types of Data sets or Data sets classification
+    - In statistical meaning its any organized collection of data.
 	- is a collection of related, discrete items of related data that may be accessed individually or in combination or managed as a whole entity.
     - data sets are required in data analysis
+    - For example that a dataset is a set of values that have a common structure and are usually thematically related.
 	- Three general characteristics of data sets namely:
 		1) Dimensionality
 			- in statistics refers to how many data attributes a data set has.
@@ -108,3 +110,5 @@ https://towardsdatascience.com/types-of-data-sets-in-data-science-data-mining-ma
 https://www.statisticshowto.com/dimensionality/#:~:text=Dimensionality%20in%20statistics%20refers%20to,one%20column%20representing%20each%20dimension.
 https://www.quora.com/What-is-a-clear-explanation-of-data-sparsity
 https://whatis.techtarget.com/definition/data-set
+https://stats.oecd.org/glossary/detail.asp?ID=542
+https://blog.ldodds.com/2013/02/09/what-is-a-dataset/
